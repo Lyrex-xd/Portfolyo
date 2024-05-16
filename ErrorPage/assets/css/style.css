@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "Cabinet";
+  src: url("./../fonts/CabinetGrotesk-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: #E9F0FF;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Cabinet";
+}
+body nav.mainNavbar {
+  font-size: 22px;
+  height: 6vh;
+}
+body nav.mainNavbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+body nav.mainNavbar ul li {
+  float: left;
+}
+body nav.mainNavbar ul li a {
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+body section.content {
+  position: relative;
+  height: 94vh;
+  display: flex;
+  justify-content: center;
+}
+body section.content div.imgContent {
+  height: 85%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body section.content div.textContent {
+  height: 85%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+  flex-direction: column;
+}
+body section.content div.textContent h1 {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 50px;
+}
+body section.content div.textContent p {
+  font-size: 22px;
+  margin-bottom: 80px;
+}
+body section.content div.textContent a.goHomeButton {
+  background-color: #203C8E;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 10px 40px;
+  border-radius: 5px;
+  font-size: 18px;
+  width: 80px;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

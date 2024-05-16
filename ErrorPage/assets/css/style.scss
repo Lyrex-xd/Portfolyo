@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Cabinet'; // Specify the name you want to refer to the font as
+    src: url('./../fonts/CabinetGrotesk-Medium.ttf') format('truetype'); // Provide the path to the font file and format
+    font-weight: normal; // Define the weight of the font
+    font-style: normal; // Define the style of the font
+  }
+
+$theme : (
+    // Color Pallete
+    textColor : #000000,
+    bgColor : #E9F0FF,
+    btnbgColor : #203C8E,
+    btntextColor : #FFFFFF,
+
+    // Fonts
+    mainFont : 'Cabinet',
+
+    // Font Size
+    mainSize : 22px,
+    h1Size : 50px,
+);
+
+body {
+    background-color: map-get($map: $theme, $key: bgColor);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: map-get($map: $theme, $key: mainFont);
+    nav.mainNavbar {
+        font-size: map-get($map: $theme, $key: mainSize);
+        height: 6vh;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+
+            li {
+                float: left;
+                a {
+                    display: block;
+                    color: map-get($map: $theme, $key: textColor);
+                    text-align: center;
+                    padding: 14px 20px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    section.content {
+        position: relative;
+        height: 94vh;
+        display: flex;
+        justify-content:center;
+
+        div.imgContent {
+            height: 85%;
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div.textContent {
+            height: 85%;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            text-align: left;
+            flex-direction: column;
+            h1 {
+                width: 100%;
+                margin-bottom: 10px;
+                font-size: map-get($map: $theme, $key: h1Size);
+            }
+
+            p {
+                font-size: 22px;
+                margin-bottom: 80px;
+            }
+
+            a.goHomeButton {
+                background-color: map-get($map: $theme, $key: btnbgColor);
+                color: map-get($map: $theme , $key: btntextColor);
+                text-decoration: none;
+                padding: 10px 40px;
+                border-radius: 5px;
+                font-size: 18px;
+                width: 80px;
+                text-align: center;
+            }
+        }
+    }
+}
