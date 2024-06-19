@@ -1,0 +1,443 @@
+
+<!doctype html>
+<html itemtype="http://schema.org/WebPage" lang="tr">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<title>Mavipiksel Sac Ağırlık Hesaplama Sistemi</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="favicon.html" type="image/x-icon">
+	<link rel="icon" href="favicon.html" type="image/x-icon">
+	<link rel="stylesheet" href="varliklar/ajax/libs/semantic-ui/2.2.13/semantic.min.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" href="./varliklar/style.css">
+</head>
+<body>
+	<div class="ustTaraf">
+		<div id='cssmenu'>
+			<ul>
+				<li class='has-sub'>
+					<a href="sac-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/sac.png">
+						</div>
+						<div>PLAKA SAC</div>
+					</a>
+				</li>
+				<li class=' has-sub'>
+					<a href="L-profil-esit-kenar-kosebent-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/l-profil.png">
+						</div>
+						<div>L PROFİL</div>
+					</a>
+				</li>
+				<li class=' has-sub'>
+					<a href="U-profil-NPU-UPN-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/u-profil.png">
+						</div>
+						<div>U PROFİL</div>
+					</a>
+				</li>
+
+
+
+				<li class='active has-sub'>
+					<a href="i-profil-NPI-IPN-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/i-profil.png">
+						</div>
+						<div>I / H PROFİL</div>
+					</a>
+				</li>
+
+				<li class=''>
+					<a href="T-profil-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/t-profil.png">
+						</div>
+						<div>T PROFİL</div>
+					</a>
+				</li>
+				<li class=' has-sub'>
+					<a href="kutu-profil-kare-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/kutu-profil.png">
+						</div>
+						<div>KUTU PROFİL</div>
+					</a>
+				</li>
+				<li class=' '>
+					<a href="boru-profil-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/boru-profil.png">
+						</div>
+						<div>BORU PROFİL</div>
+					</a>
+				</li>
+				<li class=' '>
+					<a href="yuvarlak-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/yuvarlak.png">
+						</div>
+						<div>YUVARLAK</div>
+					</a>
+				</li>
+				<li class=' '>
+					<a href="altikose-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/altikose.png">
+						</div>
+						<div>ALTIKÖŞE</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+<style>
+	.sekil {
+		margin-right: 30px
+	}
+	
+	.sekil span:nth-child(1) {
+		transform: rotate(-90deg);
+		top: 212px;
+		left: -110px;
+		text-align: center;
+	}
+	
+	.sekil span:nth-child(2) {
+		top: -10px;
+		left: 33px;
+		text-align: center;
+	}
+	
+	.sekil span:nth-child(3) {
+		top: 186px;
+		left: 95px;
+	}
+	
+	.sekil span:nth-child(4) {
+		top: 330px;
+		left: 120px;
+	}
+	
+	.sekil span:nth-child(5) {
+		top: 308px;
+		left: -26px;
+	}
+</style>
+<div class="hesap_kapsayici">
+	<div class="hesap_sekil">
+		<div class="sekil olcu">
+			<span>912</span>
+			<span>418</span>
+			<span>t<sub>w</sub>=19.3</span>
+			<span>t<sub>f</sub>=32</span>
+			<span>r=24</span>
+			<img src="varliklar/img/sekil/hl.png">
+		</div>
+	</div>
+	<div class="hesap_menu">
+		<ul>
+			<li><a href="i-profil-NPI-IPN-agirlik-fiyat-hesaplama.html">NPI / IPN</a>
+			</li>
+			<li><a href="i-profil-IPE-agirlik-fiyat-hesaplama.html">IPE</a>
+			</li>
+			<li><a href="i-profil-IPE-A-agirlik-fiyat-hesaplama.html">IPE A</a>
+			</li>
+			<li><a href="i-profil-IPE-O-agirlik-fiyat-hesaplama.html">IPE O</a>
+			</li>
+			<li><a href="H-profil-HEA-agirlik-fiyat-hesaplama.html">HEA</a>
+			</li>
+			<li><a href="H-profil-HEB-agirlik-fiyat-hesaplama.html">HEB</a>
+			</li>
+			<li><a href="H-profil-HEM-agirlik-fiyat-hesaplama.html">HEM</a>
+			</li>
+			<li><a href="H-profil-HL-agirlik-fiyat-hesaplama.html" class="aktif">HL</a>
+			</li>
+			<li><a href="H-profil-HD-agirlik-fiyat-hesaplama.html">HD</a>
+			</li>
+			<li><a href="H-profil-HP-agirlik-fiyat-hesaplama.html">HP</a>
+			</li>
+		</ul>
+	</div>
+	<div class="hesap_alan">
+		<div class="baslik">
+			<span>H PROFİL</span>
+			<h1>HL PROFİL AĞIRLIK ve FİYAT HESAPLAMA</h1>
+		</div>
+		<div id="form" class="ui big form">
+			<div class="secenek">
+				<div class="s1">EBAT</div>
+				<div class="s2">
+					<select class="ui dropdown HL">
+						<option value="1" selected data-agirlik="342" data-olcu="912,418,19.3,32,24">HL 920 X 342</option>
+						<option value="2" data-agirlik="344" data-olcu="916,419,20.3,34.3,24">HL 920 X 344</option>
+						<option value="3" data-agirlik="365" data-olcu="921,420,21.3,36.6,24">HL 920 X 365</option>
+						<option value="4" data-agirlik="368" data-olcu="928,422,22.5,39.9,24">HL 920 X 368</option>
+						<option value="5" data-agirlik="387" data-olcu="933,423,24.0,42.7,24">HL 920 X 387</option>
+						<option value="6" data-agirlik="390" data-olcu="942,422,25.9,47.0,24">HL 920 X 390</option>
+						<option value="7" data-agirlik="417" data-olcu="950,425,28.4,51.1,24">HL 920 X 417</option>
+						<option value="8" data-agirlik="420" data-olcu="960,427,31.0,55.9,24">HL 920 X 420</option>
+						<option value="9" data-agirlik="446" data-olcu="972,431,34.5,62.0,24">HL 920 X 446</option>
+						<option value="10" data-agirlik="449" data-olcu="996,437,40.9,73.9,24">HL 920 X 449</option>
+						<option value="11" data-agirlik="488" data-olcu="1028,446,50.0,89.9,24">HL 920 X 488</option>
+						<option value="12" data-agirlik="491" data-olcu="927,418,19.3,32.0,19">HL 920 X 491</option>
+						<option value="13" data-agirlik="534" data-olcu="931,419,20.3,34.3,19">HL 920 X 534</option>
+						<option value="14" data-agirlik="537" data-olcu="936,420,21.3,36.6,19">HL 920 X 537</option>
+						<option value="15" data-agirlik="585" data-olcu="943,422,22.5,39.9,19">HL 920 X 585</option>
+						<option value="16" data-agirlik="588" data-olcu="948,423,24.0,42.7,19">HL 920 X 588</option>
+						<option value="17" data-agirlik="653" data-olcu="957,422,25.9,47.0,19">HL 920 X 653</option>
+						<option value="18" data-agirlik="656" data-olcu="965,425,28.4,51.1,19">HL 920 X 656</option>
+						<option value="19" data-agirlik="725" data-olcu="975,427,31.0,55.9,19">HL 920 X 725</option>
+						<option value="20" data-agirlik="784" data-olcu="987,431,34.5,62.0,19">HL 920 X 784</option>
+						<option value="21" data-agirlik="787" data-olcu="999,434,38.1,68.1,19">HL 920 X 787</option>
+						<option value="22" data-agirlik="967" data-olcu="1011,437,40.9,73.9,19">HL 920 X 967</option>
+						<option value="23" data-agirlik="970" data-olcu="1043,446,50.0,89.9,19">HL 920 X 970</option>
+						<option value="24" data-agirlik="296" data-olcu="982,400,16.5,27.1,30">HL 1000 AA</option>
+						<option value="25" data-agirlik="321" data-olcu="990,400,16.5,31.0,30">HL 1000 A</option>
+						<option value="26" data-agirlik="371" data-olcu="1000,400,19.0,36.1,30">HL 1000 B</option>
+						<option value="27" data-agirlik="412" data-olcu="1008,402,21.1,40.0,30">HL 1000 M</option>
+						<option value="28" data-agirlik="443" data-olcu="1012,402,23.6,41.9,30">HL 1000 X 443</option>
+						<option value="29" data-agirlik="483" data-olcu="1020,404,25.4,46.0,30">HL 1000 X 483</option>
+						<option value="30" data-agirlik="539" data-olcu="1030,407,28.4,51.1,30">HL 1000 X 539</option>
+						<option value="31" data-agirlik="554" data-olcu="1032,408,29.5,52.0,30">HL 1000 X 554</option>
+						<option value="32" data-agirlik="591" data-olcu="1040,409,31.0,55.9,30">HL 1000 X 591</option>
+						<option value="33" data-agirlik="642" data-olcu="1048,412,34.0,60.0,30">HL 1000 X 642</option>
+						<option value="34" data-agirlik="748" data-olcu="1068,417,39.0,70.0,30">HL 1000 X 748</option>
+						<option value="35" data-agirlik="883" data-olcu="1092,424,45.5,82.0,30">HL 1000 X 883</option>
+						<option value="36" data-agirlik="343" data-olcu="1090,400,18.0,31.0,20">HL 1100 A</option>
+						<option value="37" data-agirlik="390" data-olcu="1100,400,20.0,36.0,20">HL 1100 B</option>
+						<option value="38" data-agirlik="433" data-olcu="1108,402,22.0,40.0,20">HL 1100 M</option>
+						<option value="39" data-agirlik="499" data-olcu="1118,405,26.0,45.0,20">HL 1100 R</option>
+					</select>
+				</div>
+			</div>
+			<div class="secenek">
+				<div class="s1">BOY</div>
+				<div class="s2">
+					<div class="ui right labeled input">
+						<input type="text" id="malzemeBoy" placeholder="" value="1000">
+						<div class="ui dropdown label" id="uzunlukBirim">
+							<div class="text">mm</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<div class="item" data-value="1">mm</div>
+								<div class="item" data-value="2">cm</div>
+								<div class="item" data-value="3">m</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="secenek">
+				<div class="s1">MALZEME</div>
+				<div class="s2">
+					<select class="ui dropdown" name="malzeme" id="malzeme">
+						<option value="1" data-yogunluk="7.86">DEMİR</option>
+						<option value="2" data-yogunluk="8">GALVANİZ</option>
+						<option value="3" data-yogunluk="7.96">PASLANMAZ</option>
+						<option value="4" data-yogunluk="2.75">ALÜMİNYUM</option>
+						<option value="0" data-yogunluk="0">DİĞER</option>
+					</select>
+				</div>
+			</div>
+			<div class="secenek" id="yogunluk">
+				<div class="s1">YOĞUNLUK</div>
+				<div class="s2">
+					<div class="ui right labeled input">
+						<input type="text" class="yogunluk" placeholder="">
+						<div class="ui basic label">
+							g/cm<sup>3</sup>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="secenek">
+				<div class="s1">FİYAT</div>
+				<div class="s2">
+					<div class="ui right labeled input">
+						<input type="text" id="fiyat" placeholder="" value="0,00">
+						<div class="ui dropdown label" id="paraBirim">
+							<div class="text">₺ / kg</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<div class="item" data-value="1">₺ / kg</div>
+								<div class="item" data-value="2">$ / kg</div>
+								<div class="item" data-value="3">€ / kg</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sonuc">
+				<div id="loader" class="hesap_sonuc">
+					<div class="loader">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+				<div class="hesaplananDegerler"></div>
+			</div>
+			<div class="hesapla">
+				<div id="butonHesapla" data-yer="yassiSac" class="ui primary submit button huge" style="margin-right: 20px;">Hesapla</div>
+				<div style="display: inline-block;position: relative;top: -2px;">
+					<div class="ui mini   vertical buttons" style="margin-left: 50px;margin-top: 2px;position: absolute;z-index: 1;">
+						<button class="ui icon button i1" command="Up" style="background: rgba(34, 36, 38, 0);padding: 0;"> <i class="up chevron icon"></i> </button>
+						<button class="ui icon button i2" command="Down" style="background: rgba(34, 36, 38, 0);"> <i class="down chevron icon"></i> </button>
+					</div>
+					<div class="ui action right  labeled input" style="width: 82px">
+						<input type="text" id="adet" name="adet_k" value="1">
+						<div class="ui basic label labelAdet" style="color: #666666; width: 100%"> ADET </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="varliklar/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="varliklar/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+<script type="text/javascript" src="varliklar/ajax/libs/numeral.js/2.0.6/numeral.min4a414a41.js?ver=4.8.2"></script>
+<script src="varliklar/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="varliklar/js/print.js"></script>
+
+<script type="text/javascript" src="varliklar/js/menu.js"></script>
+<!--<script type='text/javascript' src="genel.js?1578727505"></script>-->
+<script type="text/javascript" src="genel.js"></script>
+
+<script>
+			
+			
+	$( ".HL" ).dropdown({onChange:function(a){var e=$(this).find(":selected").data("olcu");olcuParcala(e," , ,t<sub>w</sub>=,t<sub>f</sub>=,r<sub>1</sub>=,r<sub>2</sub>="),$("#loader").fadeOut(),$(".sonuc").animate({height:"0"},500),$(".hesaplananDegerler").hide()}});
+		
+
+	$( "#yogunluk" ).hide();
+	$( "#malzeme" ).change( function () {
+		var deger = $( this ).find( ":selected" ).val();
+		if ( deger == 0 ) {
+			$( "#yogunluk" ).fadeIn();
+		} else {
+			$( "#yogunluk" ).fadeOut();
+		}
+		$( "#loader" ).fadeOut();
+		$( ".sonuc" ).animate( {
+			height: "0"
+		}, 500 );
+		$( ".hesaplananDegerler" ).hide();
+	} );
+
+	$( 'input' ).change( function () {
+		$( "#loader" ).fadeOut();
+		$( ".sonuc" ).animate( {
+			height: "0"
+		}, 500 );
+		$( ".hesaplananDegerler" ).hide();
+	} );
+
+
+
+
+	function ciftSelect() {
+		var sayi, kalinlik, agirlik, yer, atama;
+		var html = "";
+		kalinlik = $( ".0" ).find( ':selected' ).data( 'kalinlik' );
+		agirlik = $( ".0" ).find( ':selected' ).data( 'agirlik' );
+		yer = $( '.HL' );
+		atama = $( ".HL .menu" );
+		var olcu = $( ".0" ).find( ':selected' ).text();
+		yaziParcala( olcu );
+		setTimeout( function () {
+			$( ".olcu  span:nth-child(3)" ).empty();
+			$( ".olcu  span:nth-child(3)" ).append( $( ".HL" ).find( '.text' ).text() );
+		}, 300 );
+		if ( typeof ( kalinlik ) !== 'undefined' && kalinlik != null ) {
+			var parcala_kalinlik = kalinlik.split( "," );
+			var parcala_agirlik = agirlik.split( "," );
+			for ( sayi = 0; sayi < parcala_kalinlik.length; sayi++ ) {
+				if ( sayi == 0 ) {
+					html += '<div class="item"  data-value="' + parcala_agirlik[ sayi ] + '">' + parcala_kalinlik[ sayi ] + '</div>';
+					yer.dropdown( 'set value', parcala_agirlik[ sayi ] ).dropdown( 'set text', parcala_kalinlik[ sayi ] );
+				} else {
+					html += '<div class="item"  data-value="' + parcala_agirlik[ sayi ] + '">' + parcala_kalinlik[ sayi ] + '</div>';
+				}
+			}
+			atama.html( html );
+		}
+	}
+
+	function formHesaplama() {
+		var en, boy, kalinlik, yogunluk, birimFiyat, adet, agirlik, fiyat, USD, EUR, birimAgirlik, birim, disCap, etKalinligi, x_adet, y_adet;
+		var htmlz = "";
+		yogunluk = $( "#malzeme" ).find( ':selected' ).data( 'yogunluk' );
+		if ( yogunluk == "0" ) {
+			yogunluk = $( ".yogunluk" ).val().replace( /\,/g, '.' );
+		}
+		birimFiyat = $( "#fiyat" ).val().replace( /,/g, '.' );
+		adet = $( "#adet" ).val();
+		boy = $( "#malzemeBoy" ).val();
+		birimAgirlik = ($( ".HL" ).find( ":selected" ).data( "agirlik" ) / 7.86);$( "#h_ebat" ).text( $( ".HL  option:selected" ).text() + " x " + boy + " " + birimNe );agirlik = birimAgirlik * yogunluk * boy / birimBolme;		var nebu = "tip1";
+
+		USD = $( "#usd" ).text().replace( /\,/g, '.' );
+		EUR = $( "#eur" ).text().replace( /\,/g, '.' );
+
+
+		if ( kur == "1" ) {
+			fiyat = agirlik * birimFiyat;
+		}
+		if ( kur == "2" ) {
+			fiyat = agirlik * birimFiyat * USD;
+		}
+		if ( kur == "3" ) {
+			fiyat = agirlik * birimFiyat * EUR;
+		}
+		if ( nebu != "tip6" ) {
+			$( "#h_cinsi" ).text( "PROFİL" );
+		} else {
+			$( "#h_cinsi" ).text( "SAC" );
+		};
+
+		$( "#h_malzeme" ).text( $( "#malzeme option:selected" ).text() );
+		$( "#h_adet" ).text( adet );
+		$( "#h_agirlik" ).text( agirlik );
+		$( "#h_fiyat" ).text( fiyat );
+		if ( adet > 1 ) {
+			htmlz += '<div class="t1">';
+			htmlz += '<div class="k1">';
+			htmlz += '<div class="t2">';
+			htmlz += '<div class="i0">' + numeral( agirlik ).format( '0,0.00' ) + ' x ' + adet + '</div>';
+			htmlz += '<div class="i1">' + numeral( ( agirlik * adet ) ).format( '0,0.00' ) + ' KG</div>';
+			htmlz += '<div class="i2">AĞIRLIK</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '<div class="k1">';
+			htmlz += '<div class="t2 son">';
+			htmlz += '<div class="i0">' + numeral( fiyat ).format( '0,0.00' ) + ' x ' + adet + '</div>';
+			htmlz += '<div class="i1">' + numeral( ( fiyat * adet ) ).format( '0,0.00 $' ) + '</div>';
+			htmlz += '<div class="i2">FİYAT</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			 
+		} else {
+			htmlz += '<div class="t1">';
+			htmlz += '<div class="k1">';
+			htmlz += '<div class="t2">';
+			htmlz += '<div class="i1">' + numeral( agirlik ).format( '0,0.00' ) + ' KG</div>';
+			htmlz += '<div class="i2">AĞIRLIK</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '<div class="k1">';
+			htmlz += '<div class="t2 son">';
+			htmlz += '<div class="i1">' + numeral( fiyat ).format( '0,0.00 $' ) + '</div>';
+			htmlz += '<div class="i2">FİYAT</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			 
+		}
+		setTimeout( function () {
+			$( '.hesaplananDegerler' ).html( htmlz );
+		}, 1000 );
+	}
+</script>
+</body>
+</html>

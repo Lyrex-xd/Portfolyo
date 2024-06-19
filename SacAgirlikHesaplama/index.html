@@ -1,0 +1,1858 @@
+﻿<!doctype html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="tr">
+
+<!-- Mirrored from www.gozdamlasisac.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Feb 2023 09:03:41 GMT -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><head>
+<title>Mavipiksel Sac Ağırlık Hesaplama Sistemi</title>
+<meta name="robots" content="index,follow,all">
+<meta name="document-rating" content="General">
+<meta name="Distribution" content="Global">
+<meta property="og:locale" content="tr_TR"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Mavipiksel Sac Ağırlık Hesaplama Sistemi"/>
+<meta property="og:description" content=""/>
+<meta property="og:url" content="index.html"/>
+<meta property="og:site_name" content="Mavipiksel Sac Ağırlık Hesaplama Sistemi"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="favicon.html" type="image/x-icon">
+<link rel="icon" href="favicon.html" type="image/x-icon">
+<link rel="stylesheet" href="varliklar/ajax/libs/semantic-ui/2.2.13/semantic.min.css"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&amp;subset=latin-ext" rel="stylesheet">
+	<style>
+	html {
+		height: 100%;
+		box-sizing: border-box;
+	}
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: inherit;
+	}
+
+	body {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		padding-bottom: 6rem;
+		min-height: 100%;
+		font-family: 'Roboto', sans-serif !important;
+		background: #fff !important;
+		color: #222 !important;
+		font-size: 12px !important
+	}
+
+	body .pushable> .pusher {
+		background: #e9ebee;
+	}
+
+	a {
+		outline: 0;
+		text-decoration: none;
+		font-size: 11px !important;
+		font-weight: bold;
+		color: #676767;
+	}
+
+	h1 {
+		font-family: 'Roboto', sans-serif !important;
+		font-size: 1.50em;
+		color: #676767;
+		font-weight: 600;
+		margin-top: 7px;
+		letter-spacing: -0.01em;
+	}
+
+	.bold-text {
+		font-weight: bold;
+	}
+
+	.gizle {
+		visibility: hidden
+	}
+
+	.goster {
+		visibility: visible
+	}
+
+	.logo {
+		padding: 0px 30px 0px 30px;
+		position: relative;
+		margin-bottom: -30px;
+		transform: translateX(30px);
+		width: 153px;
+		height: 59px;
+		background: url(varliklar/img/logo.png);
+	}
+
+	.ustTaraf {
+		position: relative;
+		background-color: #fff;
+		padding: 30px 0 30px 0;
+		z-index: 2;
+		box-shadow: 0px 0px 10px 0px rgb(82, 82, 82);
+		background: rgb(255, 255, 255);
+		background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+		background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+		background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+		filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=1);
+	}
+
+	.hesap_alan {
+		position: relative;
+		border-radius: 10px;
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+		background: rgb(255, 255, 255);
+		background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+		background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+		filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0);
+	}	.hesap_alan:before {
+		content: "";
+		position: absolute;
+		bottom: 33px;
+		left: 0;
+		background: url(varliklar/img/altGolge.png);
+		width: 500px;
+		height: 33px;
+	}
+
+	.baslik {
+		padding: 29px 40px;
+		position: relative;
+		font-weight: bold;
+		text-align: left;
+		height: 100px;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.baslik span {
+		position: relative;
+		font-size: 14px;
+		font-weight: bolder;
+		color: #fb7922;
+	}
+
+	.baslik span:after {
+		content: '';
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		top: 18px;
+		left: 0;
+		background: #fb7922;
+	}
+
+	.secenek {
+		display: flex;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.secenek:hover {
+		background: rgba(230, 230, 230, 0.4);
+	}
+
+	.secenek:hover .s1 {
+		font-weight: bold;
+	}
+
+	.s1 {
+		width: 35%;
+		padding-left: 40px;
+		text-align: left;
+		font-size: 13px;
+		color: #676767;
+		font-weight: bold;
+		height: 80px;
+		line-height: 81px;
+	}
+
+	.s2 {
+		width: 65%;
+		text-align: left;
+		height: 80px;
+		line-height: 80px;
+	}
+.reklamUst{
+	box-shadow: inset 0 3px 5px -3px #525252;
+    background: #fd9f55;
+    text-align: center;
+    padding: 10px 10px 6px 10px;
+}
+.reklamAlt{
+
+}
+	.hesap_kapsayici {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		z-index: 1;
+		margin-bottom: 50px;
+		padding: 50px 0px 70px 0px;
+		box-shadow: inset 0px 3px 5px -3px rgb(82, 82, 82);
+		background: #fd9e58;
+		filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fd9e53', endColorstr='#fb7922', GradientType=1);
+	}
+
+	.hesap_sekil {
+		flex: 1;
+		order: 1
+	}
+
+	.hesap_alan {
+		flex: 2;
+		order: 2;
+		max-width: 500px;
+		min-width: 500px
+	}
+
+	.hesap_menu {
+		flex: 1;
+		order: 3;
+		text-align: left
+	}
+
+	.hesap_menu ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	.hesap_menu li {
+		list-style: none;
+	}
+
+	.hesap_menu li a {
+		border-left: 4px solid transparent;
+		padding: 10px;
+		font-size: 15px !important;
+		font-weight: bold;
+		color: #666666;
+		display: block;
+		transition: background-color 0.25s ease-out;
+		background-color: transparent;
+	}
+
+	.hesap_menu li a:hover {
+		background: #fb7822;
+	}
+
+	.hesap_menu li a.aktif {
+		border-left: 8px solid #ff8109;
+		font-weight: bolder;
+	}
+
+	#liste {
+		right: 0;
+		top: 0;
+		position: absolute;
+		padding: 50px 30px;
+	}
+
+	#sideListe {
+		max-width: 960px;
+		min-width: 750px;
+		width: 90%;
+	}
+
+	.sekil {
+		position: relative;
+		width: 300px;
+		float: right;
+	}
+
+	.sekil span {
+		position: absolute;
+		width: 100%;
+		color: #b93928;
+		font-size: 15px;
+		font-weight: bold;
+		text-shadow: 0 0 5px rgb(132, 161, 185);
+	}
+
+	.hesapla {
+		text-align: left;
+		padding: 40px 20px;
+	}
+
+	.yorum {
+		width: 70%;
+		margin: 50px auto;
+		margin-bottom: -40px;
+	}
+
+	.sonuc {
+		background: #ffffff;
+		border-bottom: 1px solid #ddd;
+		height: 0px;
+	}
+
+	.t1 {
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+		height: 120px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.t2 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+
+	.k1 {
+		width: 50%;
+		height: 100%;
+	}
+
+	.k1:last-child {
+		border-left: 1px solid #ddd;
+	}
+
+	.i0 {
+		color: #676767;
+		font-size: 11px;
+		font-weight: 100;
+		height: 20px;
+	}
+
+	.i1 {
+		font-size: 20px;
+		font-weight: bold;
+		color: #fb7922;
+		height: 20px;
+	}
+
+	.i2 {
+		color: #676767;
+		font-size: 11px;
+		font-weight: bold;
+		height: 20px;
+	}
+
+	.ekle_alan {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translateY(-50%) translateX(-50%);
+	}
+
+	.hesaplananDegerler {
+		position: relative;
+	}
+	/**********************************************
+
+	MENU ALAN
+
+	**********************************************/
+
+	#cssmenu,
+	#cssmenu ul,
+	#cssmenu ul li,
+	#cssmenu ul li a,
+	#cssmenu #menu-button {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		list-style: none;
+		line-height: 1;
+		display: block;
+		position: relative;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	#cssmenu:after,
+	#cssmenu> ul:after {
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+
+	#cssmenu #menu-button {
+		display: none;
+	}
+
+	#cssmenu {
+		position: relative;
+		width: 685px;
+		top: 30px;
+		margin: 0px auto;
+		padding: 0;
+	}
+
+	#menu-line {
+		position: absolute;
+		bottom: -7px;
+		left: 0;
+		height: 7px;
+		background: #ff8109;
+		-webkit-transition: all 0.25s ease-out;
+		-moz-transition: all 0.25s ease-out;
+		-ms-transition: all 0.25s ease-out;
+		-o-transition: all 0.25s ease-out;
+		transition: all 0.25s ease-out;
+	}
+
+	#cssmenu> ul> li {
+		float: left;
+	}
+
+	#cssmenu.align-center> ul {
+		font-size: 0;
+		text-align: center;
+	}
+
+	#cssmenu.align-center> ul> li {
+		display: inline-block;
+		float: none;
+	}
+
+	#cssmenu.align-center ul ul {
+		text-align: left;
+	}
+
+	#cssmenu.align-right> ul> li {
+		float: right;
+	}
+
+	#cssmenu.align-right ul ul {
+		text-align: right;
+	}
+
+	#cssmenu> ul> li> a {
+		padding: 13px 10px 13px 10px;
+		font-size: 11px !important;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #676767;
+		-webkit-transition: color .2s ease;
+		-moz-transition: color .2s ease;
+		-ms-transition: color .2s ease;
+		-o-transition: color .2s ease;
+		transition: color .2s ease;
+	}
+
+	#cssmenu> ul> li:hover> a,
+	#cssmenu> ul> li.active> a {
+		color: #676767;
+	}
+
+	#cssmenu> ul> li.has-sub:hover> a::after {
+		border-color: #fd9f55;
+		max-height: 1000px;
+		-webkit-transform: perspective(400) rotate3d(0, 0, 0, 0);
+	}
+
+	#cssmenu ul ul {
+		position: absolute;
+		left: -9999px;
+	}
+
+	#cssmenu li:hover> ul {
+		left: auto;
+		padding: 10px 0;
+		margin-top: -10px;
+	}
+
+	#cssmenu.align-right li:hover> ul {
+		right: 0;
+	}
+
+	#cssmenu ul ul ul {
+		margin-left: 100%;
+		top: 0;
+	}
+
+	#cssmenu.align-right ul ul ul {
+		margin-left: 0;
+		margin-right: 100%;
+	}
+
+	#cssmenu li ul {
+		position: absolute;
+		left: 0;
+		top: 45px;
+		z-index: 1;
+		max-height: 0;
+		overflow: hidden;
+		-webkit-transform: perspective(400) rotate3d(1, 0, 0, -90deg);
+		-webkit-transform-origin: 50% 0;
+		-webkit-transition: 350ms;
+		-moz-transition: 350ms;
+		-o-transition: 350ms;
+		transition: 350ms;
+	}
+
+	#cssmenu ul li:hover ul {
+		max-height: 1000px;
+		-webkit-transform: perspective(400) rotate3d(0, 0, 0, 0);
+	}
+
+	#cssmenu ul ul li a {
+		padding: 10px 20px;
+		width: 180px;
+		font-size: 12px;
+		background: #fb7a24;
+		text-decoration: none;
+		color: #dddddd;
+		-webkit-transition: color .2s ease;
+		-moz-transition: color .2s ease;
+		-ms-transition: color .2s ease;
+		-o-transition: color .2s ease;
+		transition: color .2s ease;
+	}
+
+	#cssmenu ul ul li:hover> a,
+	#cssmenu ul ul li a:hover {
+		color: #ffffff;
+		background: #b93928;
+	}
+
+	#cssmenu ul ul li.has-sub> a::after {
+		position: absolute;
+		top: 13px;
+		right: 10px;
+		width: 4px;
+		height: 4px;
+		border-bottom: 1px solid #dddddd;
+		border-right: 1px solid #dddddd;
+		content: "";
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		-webkit-transition: border-color 0.2s ease;
+		-moz-transition: border-color 0.2s ease;
+		-ms-transition: border-color 0.2s ease;
+		-o-transition: border-color 0.2s ease;
+		transition: border-color 0.2s ease;
+	}
+
+	#cssmenu.align-right ul ul li.has-sub> a::after {
+		right: auto;
+		left: 10px;
+		border-bottom: 0;
+		border-right: 0;
+		border-top: 1px solid #dddddd;
+		border-left: 1px solid #dddddd;
+	}
+
+	#cssmenu ul ul li.has-sub:hover> a::after {
+		border-color: #ffffff;
+	}
+
+	@media all and (max-width: 1023px) {
+		#cssmenu> ul> li> a {
+			font-size: 13px !important;
+		}
+		#cssmenu> ul> li:hover> a,
+		#cssmenu> ul> li.active> a {
+			color: #fb7922;
+			background: #e5e5e5;
+		}
+		#cssmenu ul ul li:hover> a,
+		#cssmenu ul ul li a:hover {
+			color: #b93928;
+			background: #ffffff;
+		}
+		#cssmenu li:hover> ul {
+			left: auto;
+			padding: 0;
+			margin-top: 0;
+		}
+		#cssmenu li ul {
+			top: 0px;
+		}
+		#cssmenu {
+			width: 100%;
+		}
+		#cssmenu ul {
+			width: 100%;
+			display: none;
+			padding-top: 30px;
+		}
+		#cssmenu.align-center> ul,
+		#cssmenu.align-right ul ul {
+			text-align: left;
+		}
+		#cssmenu ul li,
+		#cssmenu ul ul li,
+		#cssmenu ul li:hover> ul> li {
+			width: 100%;
+			height: auto;
+			border-top: 1px solid rgba(120, 120, 120, 0.15);
+		}
+		#cssmenu ul li a,
+		#cssmenu ul ul li a {
+			width: 100%;
+			padding: 20px 30px;
+		}
+		#cssmenu> ul> li,
+		#cssmenu.align-center> ul> li,
+		#cssmenu.align-right> ul> li {
+			float: none;
+			display: block;
+		}
+		#cssmenu ul ul li a {
+			padding: 20px 20px 20px 30px;
+			font-size: 12px;
+			color: #000000;
+			background: white;
+		}
+		#cssmenu ul ul li:hover> a,
+		#cssmenu ul ul li a:hover {
+			color: #000000;
+			background: #e5e5e5;
+		}
+		#cssmenu ul ul ul li a {
+			padding-left: 40px;
+		}
+		#cssmenu ul ul,
+		#cssmenu ul ul ul {
+			position: relative;
+			left: 0;
+			right: auto;
+			width: 100%;
+			margin: 0;
+		}
+		#cssmenu> ul> li.has-sub> a::after,
+		#cssmenu ul ul li.has-sub> a::after {
+			display: none;
+		}
+		#menu-line {
+			display: none;
+		}
+		#cssmenu #menu-button {
+			display: inline-block;
+			position: relative;
+			width: 36px;
+			height: 33px;
+			margin: 0;
+			color: #fefefe;
+			cursor: pointer;
+			font-size: 12px;
+			text-transform: uppercase;
+			top: -39px;
+			z-index: 500;
+			right: 30px;
+			float: right;
+			border-radius: 4px;
+			background: #ff8109;
+		}
+		#cssmenu #menu-button::after {
+			content: '';
+			position: absolute;
+			top: 11px;
+			right: 10px;
+			display: block;
+			width: 16px;
+			height: 2px;
+			background: #ffffff;
+		}
+		#cssmenu #menu-button::before {
+			content: '';
+			position: absolute;
+			top: 16px;
+			right: 10px;
+			display: block;
+			width: 16px;
+			height: 7px;
+			border-top: 2px solid #ffffff;
+			border-bottom: 2px solid #ffffff;
+		}
+		#cssmenu .submenu-button {
+			position: absolute;
+			z-index: 10;
+			right: 0;
+			top: 0;
+			display: block;
+			border-left: 1px solid rgba(120, 120, 120, 0.15);
+			height: 52px;
+			width: 52px;
+			cursor: pointer;
+		}
+		#cssmenu .submenu-button::after {
+			content: '';
+			position: absolute;
+			top: 21px;
+			left: 26px;
+			display: block;
+			width: 1px;
+			height: 11px;
+			background: #000000;
+			z-index: 99;
+		}
+		#cssmenu .submenu-button::before {
+			content: '';
+			position: absolute;
+			left: 21px;
+			top: 26px;
+			display: block;
+			width: 11px;
+			height: 1px;
+			background: #000000;
+			z-index: 99;
+		}
+		#cssmenu .submenu-button.submenu-opened:after {
+			display: none;
+		}
+		.navIco {
+			display: none;
+		}
+	}
+
+	.navIco {
+		position: absolute;
+		top: -50px;
+		left: 0;
+		text-align: center;
+		width: 100%;
+	}
+	/**********************************************
+
+	FAQ
+
+	**********************************************/
+
+	section {
+		margin-bottom: 90px;
+
+	}
+
+	section h1 {
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: normal;
+		letter-spacing: 10px;
+		font-size: 25px;
+		line-height: 1.5;
+	}
+
+	section p,
+	section a {
+		text-align: center;
+		letter-spacing: 3px;
+	}
+
+	p {
+		font-weight: 200;
+		line-height: 2.5;
+		font-size: 14px;
+	}
+
+	.faq {
+		width: 70%;
+		margin: 50px auto;
+	}
+
+	.toggle:last-child {
+		border-bottom: 1px solid #dbdfe4;
+	}
+
+	.toggle .toggle-title {
+		position: relative;
+		display: block;
+		border-top: 1px solid #dbdfe4;
+		margin-bottom: 6px;
+	}
+
+	.toggle .toggle-title h3 {
+		font-size: 20px;
+		margin: 0px;
+		line-height: 1;
+		cursor: pointer;
+		font-weight: 200;
+	}
+
+	.toggle .toggle-inner {
+		padding: 7px 25px 10px 25px;
+
+		margin: -7px 0 6px;
+	}
+
+	.toggle .toggle-inner div {
+		max-width: 100%;
+	}
+
+	.toggle .toggle-title .title-name {
+		display: block;
+		padding: 25px 25px 14px;
+	}
+
+	.toggle .toggle-title a i {
+		font-size: 22px;
+		margin-right: 5px;
+	}
+
+	.toggle .toggle-title i {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		margin: 20px;
+		right: 0;
+	}
+
+	.toggle .toggle-title.active i {
+	}
+	/**********************************************
+
+	FOOTER
+
+	**********************************************/
+
+	.footer {
+    width: 70%;
+    display: flex;
+    margin: 0px auto;
+    background: #ffffff;
+    position: relative;
+
+justify-content: space-between;
+    margin-bottom: 60px;
+	}
+@media only screen and (max-width: 768px) {
+
+	.footer li {
+	    padding: 5px;
+	}
+	.footer li:hover {
+		background: #676767;
+	}
+	.footer li:hover a {
+		color: #fff;
+	}
+.footer .logom {
+
+	display: none;
+}
+	.footer a {
+		display: block;
+	}
+
+.footer_baslik:after {
+	width: 100% !important;
+}
+.footer {
+	flex-direction: column;
+}
+}
+
+	.footer_cell_l {
+		width: 200px;
+	}
+
+	.footer_cell_r {
+		display: flex;
+		width: calc(100% - 200px);
+	}
+
+	.footer_cell_a {
+
+
+		padding-top: 20px;
+	}
+
+	.footer_baslik {
+    font-size: 15px;
+    position: relative;
+    font-weight: bolder;
+    color: #656c7a;
+	}
+	.footer_baslik:after{
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: #e2e7ea;
+    border-radius: 5px;
+	}
+
+	.footer_cell_a ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    line-height: 22px;
+    margin-top: 12px;
+    font-size: 11px;
+    color: #656c7a;
+		    margin-bottom: 15.5px;
+	}
+
+	.footer_social{}
+	.footer_geri{}
+	/**********************************************
+
+	TABLE
+
+	**********************************************/
+	table.dosya td {text-align: left;}
+	table {
+		overflow: hidden;
+		width: 70%;
+	}
+
+	th,
+	td {
+		position: relative;
+		font-size: 1em;
+		-webkit-transition: font-size .725s;
+		-moz-transition: font-size .725s;
+		-o-transition: font-size .725s;
+		transition: font-size .725s;
+	}
+
+	th::before,
+	th::after,
+	td::before,
+	td::after {
+		position: absolute;
+		z-index: -1;
+		background: transparent;
+		content: '';
+		pointer-events: none;
+		-webkit-transition: background .05s ease-in-out;
+		transition: background .05s ease-in-out;
+	}
+
+	td:hover {
+		background: #fd9f55;
+	}
+
+	th::before,
+	td::before {
+		top: 0;
+		bottom: 0;
+		left: -100vw;
+		right: -100vw;
+	}
+
+	th::after,
+	td::after {
+		top: -100vh;
+		bottom: -100vh;
+		left: 0;
+		right: 0;
+	}
+
+	th:hover::before,
+	th:hover::after,
+	td:hover::before,
+	td:hover::after {
+		background: #dbdfe4;
+		font-weight: 700;
+	}
+
+	th:focus::before,
+	th:focus::after,
+	td:focus::before,
+	td:focus::after {
+		z-index: -2;
+		background: #dbdfe4;
+		font-weight: 700;
+	}
+	/* for demo */
+
+	table {
+		margin: 30px auto;
+		border-collapse: collapse;
+		text-align: center;
+	}
+
+	thead {
+		font-size: 1.2em;
+		font-weight: 700;
+	}
+
+	th,
+	td {
+		width: 100% / 6;
+		padding: 1.5em 0.5em;
+		border-bottom: 1px solid #dddddd;
+	}
+
+	th {
+		text-transform: uppercase;
+	}
+
+	tbody th:first-child {
+		text-align: left;
+	}
+
+	#listeBody td:hover {
+		background: none
+	}
+	/**********************************************
+
+	SEMANTIC
+
+	**********************************************/
+	.ui.basic.label {
+		color: #666666;
+	}
+	.ui.secondary.pointing.menu {
+		border: 0px;
+		margin-top: -60px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: start;
+		-ms-flex-align: start;
+		align-items: flex-start;
+	}
+
+	.ui.secondary.pointing.menu .active.item {
+		border-color: #fb7922;
+		color: #fd9f56;
+	}
+
+	.ui.secondary.pointing.menu .active.item:hover {
+		border-color: #fb7922;
+		color: #fd9f56;
+	}
+
+	.ui.secondary.pointing.menu .item {
+		font-size: 1.5em !important;
+		border-bottom-width: 5px;
+	}
+
+	.primary {
+		background-color: #fb7922 !important
+	}
+
+	.ui.selection.active.dropdown {
+		border-color: #fd9f57 !important;
+		box-shadow: 0 2px 3px 0 rgba(34, 36, 38, .15);
+	}
+
+	.ui.selection.active.dropdown .menu {
+		border-color: #fd9f57 !important;
+		box-shadow: 0 2px 3px 0 rgba(34, 36, 38, .15);
+	}
+
+	.ui.label {
+		font-weight: 100;
+		font-family: 'Roboto', sans-serif !important;
+		border: 1px solid #dededf;
+		background: white;
+	}
+
+	.ui.form input:not([type]),
+	.ui.form input[type=date],
+	.ui.form input[type=datetime-local],
+	.ui.form input[type=email],
+	.ui.form input[type=file],
+	.ui.form input[type=number],
+	.ui.form input[type=password],
+	.ui.form input[type=search],
+	.ui.form input[type=tel],
+	.ui.form input[type=text],
+	.ui.form input[type=time],
+	.ui.form input[type=url] {
+		font-family: 'Roboto', sans-serif !important;
+	}
+
+	.ui.dropdown>.dropdown.icon {
+		position: absolute;
+		right: 17px;
+	}
+
+	.ui.dropdown {
+		width: 90%;
+	}
+
+	.ui.right.labeled.input {
+		width: 51.25%;
+	}
+
+	.ui.label {
+		width: 75%;
+	}
+	/**********************************************
+
+	LOADİNG
+
+	**********************************************/
+
+	.hesap_sonuc {
+		width: 100%;
+		height: 2px;
+	}
+
+	.loader {
+		height: 100%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+	}
+
+	.loader div {
+		-webkit-box-flex: 1;
+		-ms-flex: 1;
+		flex: 1;
+		background: #ff8109;
+		-webkit-animation: go 0.8s infinite alternate ease;
+		animation: go 0.8s infinite alternate ease;
+		-webkit-box-shadow: 0 0 20px #ff8109;
+		box-shadow: 0 0 20px #ff8109;
+	}
+
+	.loader div:nth-child(1) {
+		-webkit-animation-delay: -0.72s;
+		animation-delay: -0.72s;
+	}
+
+	.loader div:nth-child(2) {
+		-webkit-animation-delay: -0.64s;
+		animation-delay: -0.64s;
+	}
+
+	.loader div:nth-child(3) {
+		-webkit-animation-delay: -0.56s;
+		animation-delay: -0.56s;
+	}
+
+	.loader div:nth-child(4) {
+		-webkit-animation-delay: -0.48s;
+		animation-delay: -0.48s;
+	}
+
+	.loader div:nth-child(5) {
+		-webkit-animation-delay: -0.4s;
+		animation-delay: -0.4s;
+	}
+
+	.loader div:nth-child(6) {
+		-webkit-animation-delay: -0.32s;
+		animation-delay: -0.32s;
+	}
+
+	.loader div:nth-child(7) {
+		-webkit-animation-delay: -0.24s;
+		animation-delay: -0.24s;
+	}
+
+	.loader div:nth-child(8) {
+		-webkit-animation-delay: -0.16s;
+		animation-delay: -0.16s;
+	}
+
+	.loader div:nth-child(9) {
+		-webkit-animation-delay: -0.08s;
+		animation-delay: -0.08s;
+	}
+
+	.loader div:nth-child(10) {
+		-webkit-animation-delay: 0s;
+		animation-delay: 0s;
+	}
+
+	@-webkit-keyframes go {
+		100% {
+			background: transparent;
+			-webkit-box-flex: 10;
+			flex: 10;
+			-webkit-box-shadow: 0 0 0 transparent;
+			box-shadow: 0 0 0 transparent;
+		}
+	}
+
+	@keyframes go {
+		100% {
+			background: transparent;
+			-webkit-box-flex: 10;
+			-ms-flex: 10;
+			flex: 10;
+			-webkit-box-shadow: 0 0 0 transparent;
+			box-shadow: 0 0 0 transparent;
+		}
+	}
+	/**********************************************
+
+	RESPONSIVE
+
+	**********************************************/
+
+	@media screen and (max-width: 1200px) {
+		.footer {
+	    width: 90%;
+	}
+		.logo {
+			padding: 0;
+			width: 52px;
+			background: url(varliklar/img/logo_k.png);
+		}
+		.faq {
+			width: 90%;
+			margin: 50px auto;
+		}
+		table {
+			width: 90%;
+		}
+		.yorum {
+			width: 90%;
+			margin: 40px auto;
+		}
+	}
+
+	@media screen and (max-width: 1023px) {
+		.logo {
+			width: 153px;
+			background: url(varliklar/img/logo.png);
+		}
+		#liste {
+			padding-right: 80px;
+		}
+		.hesap_menu {
+			display: none
+		}		.hesap_alan {
+			margin: 33px;
+			float: right;
+		}
+		.faq {
+			width: 100%;
+			margin: 50px auto;
+		}
+		table {
+			width: 100%;
+		}
+		.sekil {
+			width: auto;
+			float: none;
+		}
+	}
+
+	@media screen and (max-width: 768px) {		.hesap_alan {
+			margin: 33px auto;
+			float: none;
+		}		.hesap_sekil {
+			display: block;
+			margin-top: 20px;
+		}
+		.faq {
+			width: 100%;
+			margin: -50px auto;
+		}
+		.yorum {
+			width: 90%;
+			margin: 100px auto;
+			    margin-bottom: 0;
+		}
+		.footer {
+			margin-top: 20px;
+		}
+	}
+
+	@media screen and (max-width:767px) {
+		.ekle_alan,
+		#liste {
+			display: none
+		}
+	}
+
+	@media screen and (max-width: 550px) {		.hesap_alan {
+			margin: 33px auto;
+			float: none;
+			width: 100%;
+			box-shadow: none;
+			border-radius: 0;
+			min-width: unset;
+			max-width: unset;
+		}
+		.hesap_kapsayici {
+			padding: 0;
+			margin-bottom: 0;
+		}
+		.baslik {
+			background: #fb7922;
+			padding: 20px;
+			height: auto !important;
+			margin-top: -7px;
+		}
+		.baslik span {
+			display: none;
+			color: #b93928;
+		}
+		.baslik span:after {
+			background: #b93928;
+		}
+		h1 {
+			color: aliceblue;
+			font-size: 12px;
+			margin: 0px;
+		}
+		.hesap_alan:before {
+			background: none;
+		}
+		.s1 {
+			font-size: 11px;
+			padding-left: 20px;
+		}
+		.ui.mini.vertical.buttons {
+			display: none
+		}
+		.faq {
+			margin: 0px auto;
+		}
+		.s1 {
+			height: 60px;
+			line-height: 60px;
+
+		}
+		.s2 {
+			height: 60px;
+			line-height: 60px;
+
+		}
+	}
+	#menu-line{
+		    background: #676767;
+	}
+	.reklam{
+		position: relative;
+    z-index: 1;
+    height: 115px;
+    background: #ECE9E6;
+    background: -webkit-linear-gradient(to top, #FFFFFF, #ECE9E6);
+    background: linear-gradient(to top, #FFFFFF, #ECE9E6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+	}	@media only screen and (max-width: 960px) {
+  .reklam {
+    display: none
+
+  }
+}	.top-links {
+		height: 24px;		
+		font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+		font-size: 20px !important;
+		font-weight: 600;		
+		color: #4891dc;
+	}
+	.top-links a {					
+		font-size: 20px !important;
+		font-weight: 600;		
+		color: #4891dc;	
+		}
+		.whatsapp {color: #8fd400 !important;}
+		
+	.top-links a:hover {
+		background-color: #eceef1; 
+		color: #002878; 
+		font-weight: 700;}
+</style>
+</head>
+
+<body>
+
+		<div class="pusher">
+
+<style>
+	.anaKapsayici {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		min-height: 80vh;
+		margin-bottom: 10px;
+		background: #fff;
+		filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fd9e53', endColorstr='#fb7922', GradientType=1);
+	}
+
+	.anaKapsul {
+		width: 960px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.card-container {
+		opacity: 1;
+		perspective: 900px;
+		margin: 10px;
+	}
+
+	.card {
+		position: relative;
+		width: 300px;
+		height: 200px;
+		transition: all 0.6s ease;
+		transform-style: preserve-3d;
+	}
+
+	.front,
+	.back {
+		position: absolute;
+		background: #353535;
+		top: 0;
+		left: 0;
+		width: 300px;
+		height: 200px;
+		border-radius: 5px;
+		color: #fff;
+		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3), 0 5px 5px 0 rgba(0, 0, 0, 0.15);
+		backface-visibility: hidden;
+	}
+
+	.front {
+		display: flex;
+		z-index: 1;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		font-size: 30px;
+		background: #353535;
+	}
+
+	.back {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 18px;
+	}
+
+	.card-container:hover .card {
+		transform: rotateY(180deg);
+		transition: all 1s;
+	}
+
+	.back {
+		transform: rotateY(180deg);
+		z-index: 1000;
+		position: relative;
+	}
+
+	.ilk {
+		background: #fff
+	}
+
+	.altYazi {
+		font-size: 14px;
+		color: #d80d07;
+		font-weight: bold;
+	}
+
+	.aaa_ {
+		position: relative;
+		width: 100%;
+	}
+
+	.aaa_1 {
+		color: #d80d07;
+		font-size: 14px;
+		margin-bottom: 8px;
+	}
+
+	.aaa_2 {
+		position: absolute;
+		width: 100%;
+		top: 20px;
+	}
+
+	.bbb_ {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bbb_1 {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.bbb_2 {
+		position: absolute;
+		bottom: 10px;
+		width: 100%;
+		font-size: 12px;
+		color: #fff;
+		font-weight: bold;
+	}
+
+	ul.anaMenu {
+		list-style: none;
+		margin: 0;
+		left: 0;
+		padding: 10px;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	ul.anaMenu li {
+		position: relative;
+		width: 100%;
+	}
+	ul.anaMenu.ilave li {
+		width: 50% !important;
+	}
+
+	ul.anaMenu li a {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		color: aliceblue;
+		left: 0;
+	}
+
+	ul.anaMenu li a:hover {
+		background: #000;
+		color: aliceblue;
+		border-radius: 5px;
+		box-shadow: inset 0 0 100px #0b1b29;
+	}
+</style>
+<div class="anaKapsayici">
+	<div class="anaKapsul">
+		<div class="card-container">
+			<div class="card">
+				<div class="front">
+					<div class="bbb_">
+						<div class="bbb_1"><img src="varliklar/img/icon/sac_.png">
+						</div>
+						<div class="bbb_2">PLAKA SAC</div>
+					</div>
+				</div>
+				<div class="back">
+					<ul class="anaMenu">
+						<li><a href="sac-agirlik-fiyat-hesaplama.html">SAC</a>
+						</li>
+						<li><a href="silme-lama-sac-agirlik-fiyat-hesaplama.html">SİLME / LAMA</a>
+						</li>
+						<li><a href="baklava-desenli-sac-agirlik-fiyat-hesaplama.html">BAKLAVA DESENLİ SAC</a>
+						</li>
+						<li><a href="goz-damlasi-desenli-sac-agirlik-fiyat-hesaplama.html">GÖZ DAMLASI DESENLİ SAC</a>
+						</li>
+						<li><a href="ceta-desenli-sac-agirlik-fiyat-hesaplama.html">ÇETA DESENLİ SAC</a>
+						</li>
+						<li><a href="delikli-sac-agirlik-fiyat-hesaplama.html">DELİKLİ SAC</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="card-container">
+			<div class="card">
+				<div class="front">
+					<div class="bbb_">
+						<div class="bbb_1"><img src="varliklar/img/icon/l-profil_.png">
+						</div>
+						<div class="bbb_2">L PROFİL</div>
+					</div>
+				</div>
+				<div class="back">
+					<ul class="anaMenu">
+						<li><a href="L-profil-esit-kenar-kosebent-agirlik-fiyat-hesaplama.html">EŞİT KENAR KÖŞEBENT</a>
+						</li>
+						<li><a href="L-profil-cesit-kenar-kosebent-agirlik-fiyat-hesaplama.html">ÇEŞİT KENAR KÖŞEBENT</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="card-container">
+			<div class="card">
+				<div class="front">
+					<div class="bbb_">
+						<div class="bbb_1"><img src="varliklar/img/icon/u-profil_.png">
+						</div>
+						<div class="bbb_2">U PROFİL</div>
+					</div>
+				</div>
+				<div class="back">
+					<ul class="anaMenu ilave">
+						<li><a href="U-profil-NPU-UPN-agirlik-fiyat-hesaplama.html">NPU / UPN PROFİL</a>
+						</li>
+						<li><a href="U-profil-UPE-agirlik-fiyat-hesaplama.html">UPE PROFİL</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="card-container">
+			<div class="card">
+				<div class="front">
+					<div class="bbb_">
+						<div class="bbb_1"><img src="varliklar/img/icon/i-profil_.png">
+						</div>
+						<div class="bbb_2">I / H PROFİL</div>
+					</div>
+				</div>
+				<div class="back">
+					<ul class="anaMenu ilave">
+						<li><a href="i-profil-NPI-IPN-agirlik-fiyat-hesaplama.html">NPI / IPN PROFİL</a>
+						</li>
+						<li><a href="i-profil-IPE-agirlik-fiyat-hesaplama.html">IPE PROFİL</a>
+						</li>
+						<li><a href="i-profil-IPE-A-agirlik-fiyat-hesaplama.html">IPE A PROFİL</a>
+						</li>
+						<li><a href="i-profil-IPE-O-agirlik-fiyat-hesaplama.html">IPE O PROFİL</a>
+						</li>
+						<li><a href="H-profil-HEA-agirlik-fiyat-hesaplama.html">HEA PROFİL</a>
+						</li>
+						<li><a href="H-profil-HEB-agirlik-fiyat-hesaplama.html">HEB PROFİL</a>
+						</li>
+						<li><a href="H-profil-HEM-agirlik-fiyat-hesaplama.html">HEM PROFİL</a>
+						</li>
+						<li><a href="H-profil-HL-agirlik-fiyat-hesaplama.html">HL PROFİL</a>
+						</li>
+						<li><a href="H-profil-HD-agirlik-fiyat-hesaplama.html">HD PROFİL</a>
+						</li>
+						<li><a href="H-profil-HP-agirlik-fiyat-hesaplama.html">HP PROFİL</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="card-container">
+			<div class="card">
+				<div class="front">
+					<div class="bbb_">
+						<div class="bbb_1"><img src="varliklar/img/icon/kutu-profil_.png">
+						</div>
+						<div class="bbb_2">KUTU PROFİL</div>
+					</div>
+				</div>
+				<div class="back">
+					<ul class="anaMenu">
+						<li><a href="kutu-profil-kare-agirlik-fiyat-hesaplama.html">KARE KUTU PROFİL</a>
+						</li>
+						<li><a href="kutu-profil-dikdortgen-agirlik-fiyat-hesaplama.html">DİKDÖRTGEN KUTU PROFİL</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<div class="card-container">
+			<div class="card">
+				<div class="front">
+					<div class="bbb_">
+						<div class="bbb_1"><img src="varliklar/img/icon/t-profil_.png">
+						</div>
+						<div class="bbb_2">T PROFİL</div>
+					</div>
+				</div>
+				<div class="back">
+					<ul class="anaMenu">
+						<li><a href="T-profil-agirlik-fiyat-hesaplama.html">T PROFİL</</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="card-container">
+			<div class="card">
+				<div class="front">
+					<div class="bbb_">
+						<div class="bbb_1"><img src="varliklar/img/icon/boru-profil_.png">
+						</div>
+						<div class="bbb_2">BORU PROFİL</div>
+					</div>
+				</div>
+				<div class="back">
+					<ul class="anaMenu">
+						<li><a href="boru-profil-agirlik-fiyat-hesaplama.html">BORU PROFİL</</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="card-container">
+			<div class="card">
+				<div class="front">
+					<div class="bbb_">
+						<div class="bbb_1"><img src="varliklar/img/icon/diger_.png">
+						</div>
+						<div class="bbb_2">YUVARLAK | ALTIGEN</div>
+					</div>
+				</div>
+				<div class="back">
+					<ul class="anaMenu ilave">
+						<li><a href="yuvarlak-agirlik-fiyat-hesaplama.html">YUVARLAK</a>
+						</li>
+						<li><a href="altikose-agirlik-fiyat-hesaplama.html">ALTIKÖŞE</</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<script type="text/javascript" src="varliklar/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="varliklar/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+<script type="text/javascript" src="varliklar/ajax/libs/numeral.js/2.0.6/numeral.min4a414a41.js?ver=4.8.2"></script>
+<script src="varliklar/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="varliklar/js/print.js"></script>
+
+<script type="text/javascript" src="varliklar/js/menu.js"></script>
+<!--<script type='text/javascript' src="genel.js?1578727492"></script>-->
+<script type="text/javascript" src="genel.js"></script>
+
+<script>
+			
+			
+	$( ".0" ).dropdown({onChange:function(a){var e=$(this).find(":selected").data("olcu");olcuParcala(e," , ,t<sub>w</sub>=,t<sub>f</sub>=,r<sub>1</sub>=,r<sub>2</sub>="),$("#loader").fadeOut(),$(".sonuc").animate({height:"0"},500),$(".hesaplananDegerler").hide()}});
+		
+
+	$( "#yogunluk" ).hide();
+	$( "#malzeme" ).change( function () {
+		var deger = $( this ).find( ":selected" ).val();
+		if ( deger == 0 ) {
+			$( "#yogunluk" ).fadeIn();
+		} else {
+			$( "#yogunluk" ).fadeOut();
+		}
+		$( "#loader" ).fadeOut();
+		$( ".sonuc" ).animate( {
+			height: "0"
+		}, 500 );
+		$( ".hesaplananDegerler" ).hide();
+	} );
+
+	$( 'input' ).change( function () {
+		$( "#loader" ).fadeOut();
+		$( ".sonuc" ).animate( {
+			height: "0"
+		}, 500 );
+		$( ".hesaplananDegerler" ).hide();
+	} );
+
+
+
+
+	function ciftSelect() {
+		var sayi, kalinlik, agirlik, yer, atama;
+		var html = "";
+		kalinlik = $( ".0" ).find( ':selected' ).data( 'kalinlik' );
+		agirlik = $( ".0" ).find( ':selected' ).data( 'agirlik' );
+		yer = $( '.0' );
+		atama = $( ".0 .menu" );
+		var olcu = $( ".0" ).find( ':selected' ).text();
+		yaziParcala( olcu );
+		setTimeout( function () {
+			$( ".olcu  span:nth-child(3)" ).empty();
+			$( ".olcu  span:nth-child(3)" ).append( $( ".0" ).find( '.text' ).text() );
+		}, 300 );
+		if ( typeof ( kalinlik ) !== 'undefined' && kalinlik != null ) {
+			var parcala_kalinlik = kalinlik.split( "," );
+			var parcala_agirlik = agirlik.split( "," );
+			for ( sayi = 0; sayi < parcala_kalinlik.length; sayi++ ) {
+				if ( sayi == 0 ) {
+					html += '<div class="item"  data-value="' + parcala_agirlik[ sayi ] + '">' + parcala_kalinlik[ sayi ] + '</div>';
+					yer.dropdown( 'set value', parcala_agirlik[ sayi ] ).dropdown( 'set text', parcala_kalinlik[ sayi ] );
+				} else {
+					html += '<div class="item"  data-value="' + parcala_agirlik[ sayi ] + '">' + parcala_kalinlik[ sayi ] + '</div>';
+				}
+			}
+			atama.html( html );
+		}
+	}
+
+	function formHesaplama() {
+		var en, boy, kalinlik, yogunluk, birimFiyat, adet, agirlik, fiyat, USD, EUR, birimAgirlik, birim, disCap, etKalinligi, x_adet, y_adet;
+		var htmlz = "";
+		yogunluk = $( "#malzeme" ).find( ':selected' ).data( 'yogunluk' );
+		if ( yogunluk == "0" ) {
+			yogunluk = $( ".yogunluk" ).val().replace( /\,/g, '.' );
+		}
+		birimFiyat = $( "#fiyat" ).val().replace( /,/g, '.' );
+		adet = $( "#adet" ).val();
+		boy = $( "#malzemeBoy" ).val();
+				var nebu = "";
+
+		USD = $( "#usd" ).text().replace( /\,/g, '.' );
+		EUR = $( "#eur" ).text().replace( /\,/g, '.' );
+
+
+		if ( kur == "1" ) {
+			fiyat = agirlik * birimFiyat;
+		}
+		if ( kur == "2" ) {
+			fiyat = agirlik * birimFiyat * USD;
+		}
+		if ( kur == "3" ) {
+			fiyat = agirlik * birimFiyat * EUR;
+		}
+		if ( nebu != "tip6" ) {
+			$( "#h_cinsi" ).text( "PROFİL" );
+		} else {
+			$( "#h_cinsi" ).text( "SAC" );
+		};
+
+		$( "#h_malzeme" ).text( $( "#malzeme option:selected" ).text() );
+		$( "#h_adet" ).text( adet );
+		$( "#h_agirlik" ).text( agirlik );
+		$( "#h_fiyat" ).text( fiyat );
+		if ( adet > 1 ) {
+			htmlz += '<div class="t1">';
+			htmlz += '<div class="k1">';
+			htmlz += '<div class="t2">';
+			htmlz += '<div class="i0">' + numeral( agirlik ).format( '0,0.00' ) + ' x ' + adet + '</div>';
+			htmlz += '<div class="i1">' + numeral( ( agirlik * adet ) ).format( '0,0.00' ) + ' KG</div>';
+			htmlz += '<div class="i2">AĞIRLIK</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '<div class="k1">';
+			htmlz += '<div class="t2 son">';
+			htmlz += '<div class="i0">' + numeral( fiyat ).format( '0,0.00' ) + ' x ' + adet + '</div>';
+			htmlz += '<div class="i1">' + numeral( ( fiyat * adet ) ).format( '0,0.00 $' ) + '</div>';
+			htmlz += '<div class="i2">FİYAT</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '<div class="ekle_alan"><button class="ui primary  tiny button" id="listemeEkle" onclick="addToCart();return false;"> Listeme Ekle</button></div>';
+		} else {
+			htmlz += '<div class="t1">';
+			htmlz += '<div class="k1">';
+			htmlz += '<div class="t2">';
+			htmlz += '<div class="i1">' + numeral( agirlik ).format( '0,0.00' ) + ' KG</div>';
+			htmlz += '<div class="i2">AĞIRLIK</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '<div class="k1">';
+			htmlz += '<div class="t2 son">';
+			htmlz += '<div class="i1">' + numeral( fiyat ).format( '0,0.00 $' ) + '</div>';
+			htmlz += '<div class="i2">FİYAT</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '<div class="ekle_alan"><button class="ui primary  tiny button" id="listemeEkle" onclick="addToCart();return false;"> Listeme Ekle</button></div>';
+		}
+		setTimeout( function () {
+			$( '.hesaplananDegerler' ).html( htmlz );
+		}, 1000 );
+	}
+</script>
+</body>
+</html>

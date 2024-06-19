@@ -1,0 +1,2046 @@
+
+<!doctype html>
+<html itemtype="http://schema.org/WebPage" lang="tr">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<title>Mavipiksel Sac Ağırlık Hesaplama Sistemi</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="favicon.html" type="image/x-icon">
+	<link rel="icon" href="favicon.html" type="image/x-icon">
+	<link rel="stylesheet" href="varliklar/ajax/libs/semantic-ui/2.2.13/semantic.min.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" href="./varliklar/style.css">
+</head>
+<body>
+	<div class="ustTaraf">
+		<div id='cssmenu'>
+			<ul>
+				<li class='has-sub'>
+					<a href="sac-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/sac.png">
+						</div>
+						<div>PLAKA SAC</div>
+					</a>
+				</li>
+				<li class=' has-sub'>
+					<a href="L-profil-esit-kenar-kosebent-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/l-profil.png">
+						</div>
+						<div>L PROFİL</div>
+					</a>
+				</li>
+				<li class=' has-sub'>
+					<a href="U-profil-NPU-UPN-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/u-profil.png">
+						</div>
+						<div>U PROFİL</div>
+					</a>
+				</li>
+
+
+
+				<li class='active has-sub'>
+					<a href="i-profil-NPI-IPN-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/i-profil.png">
+						</div>
+						<div>I / H PROFİL</div>
+					</a>
+				</li>
+
+				<li class=''>
+					<a href="T-profil-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/t-profil.png">
+						</div>
+						<div>T PROFİL</div>
+					</a>
+				</li>
+				<li class=' has-sub'>
+					<a href="kutu-profil-kare-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/kutu-profil.png">
+						</div>
+						<div>KUTU PROFİL</div>
+					</a>
+				</li>
+				<li class=' '>
+					<a href="boru-profil-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/boru-profil.png">
+						</div>
+						<div>BORU PROFİL</div>
+					</a>
+				</li>
+				<li class=' '>
+					<a href="yuvarlak-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/yuvarlak.png">
+						</div>
+						<div>YUVARLAK</div>
+					</a>
+				</li>
+				<li class=' '>
+					<a href="altikose-agirlik-fiyat-hesaplama.html">
+						<div class="navIco"><img src="varliklar/img/icon/altikose.png">
+						</div>
+						<div>ALTIKÖŞE</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+<style>
+	.sekil {
+		margin-right: 30px
+	}
+	
+	.sekil span:nth-child(1) {
+		transform: rotate(-90deg);
+		top: 155px;
+		left: -146px;
+		text-align: center;
+	}
+	
+	.sekil span:nth-child(2) {
+		top: -10px;
+		left: 25px;
+		text-align: center;
+	}
+	
+	.sekil span:nth-child(3) {
+		top: 120px;
+		left: 65px;
+	}
+	
+	.sekil span:nth-child(4) {
+		top: 223px;
+		left: 135px;
+	}
+	
+	.sekil span:nth-child(5) {
+		top: 205px;
+		left: -29px;
+	}
+</style>
+<div class="hesap_kapsayici">
+	<div class="hesap_sekil">
+		<div class="sekil olcu">
+			<span>96</span>
+			<span>100</span>
+			<span>t<sub>w</sub>=5</span>
+			<span>t<sub>f</sub>=8</span>
+			<span>r=12</span>
+			<img src="varliklar/img/sekil/hea.png">
+		</div>
+	</div>
+	<div class="hesap_menu">
+		<ul>
+			<li><a href="i-profil-NPI-IPN-agirlik-fiyat-hesaplama.html">NPI / IPN</a>
+			</li>
+			<li><a href="i-profil-IPE-agirlik-fiyat-hesaplama.html">IPE</a>
+			</li>
+			<li><a href="i-profil-IPE-A-agirlik-fiyat-hesaplama.html">IPE A</a>
+			</li>
+			<li><a href="i-profil-IPE-O-agirlik-fiyat-hesaplama.html">IPE O</a>
+			</li>
+			<li><a href="H-profil-HEA-agirlik-fiyat-hesaplama.html" class="aktif">HEA</a>
+			</li>
+			<li><a href="H-profil-HEB-agirlik-fiyat-hesaplama.html">HEB</a>
+			</li>
+			<li><a href="H-profil-HEM-agirlik-fiyat-hesaplama.html">HEM</a>
+			</li>
+			<li><a href="H-profil-HL-agirlik-fiyat-hesaplama.html">HL</a>
+			</li>
+			<li><a href="H-profil-HD-agirlik-fiyat-hesaplama.html">HD</a>
+			</li>
+			<li><a href="H-profil-HP-agirlik-fiyat-hesaplama.html">HP</a>
+			</li>
+		</ul>
+	</div>
+	<div class="hesap_alan">
+		<div class="baslik">
+			<span>H PROFİL</span>
+			<h1>HEA PROFİL AĞIRLIK ve FİYAT HESAPLAMA</h1>
+		</div>
+		<div id="form" class="ui big form">
+			<div class="secenek">
+				<div class="s1">EBAT</div>
+				<div class="s2">
+					<select class="ui dropdown HEA">
+						<option value="2" selected data-agirlik="16.7" data-olcu="96,100,5,8,12">HEA 100</option>
+						<option value="1" data-agirlik="12.2" data-olcu="91,100,4.2,5.5,12">HEA A 100</option>
+						<option value="3" data-agirlik="19.9" data-olcu="114,120,5,8,12">HEA 120</option>
+						<option value="4" data-agirlik="24.7" data-olcu="133,140,5.5,8.5,12">HEA 140</option>
+						<option value="5" data-agirlik="30.4" data-olcu="152,160,6,9,15">HEA 160</option>
+						<option value="6" data-agirlik="35.5" data-olcu="171,180,6,9.5,15">HEA 180</option>
+						<option value="7" data-agirlik="42.3" data-olcu="190,200,6.5,10,18">HEA 200</option>
+						<option value="8" data-agirlik="50.5" data-olcu="210,220,7,11,18">HEA 220</option>
+						<option value="9" data-agirlik="60.3" data-olcu="230,240,7.5,12,21">HEA 240</option>
+						<option value="10" data-agirlik="68.2" data-olcu="250,260,7.5,12.5,24">HEA 260</option>
+						<option value="11" data-agirlik="76.4" data-olcu="270,280,8,13,24">HEA 280</option>
+						<option value="12" data-agirlik="88.3" data-olcu="290,300,8.5,14,27">HEA 300</option>
+						<option value="13" data-agirlik="97.6" data-olcu="310,300,9,15.5,27">HEA 320</option>
+						<option value="14" data-agirlik="105" data-olcu="330,300,9.5,16.5,27">HEA 340</option>
+						<option value="15" data-agirlik="112" data-olcu="350,300,10,17.5,27">HEA 360</option>
+						<option value="16" data-agirlik="125" data-olcu="390,300,11,19,27">HEA 400</option>
+						<option value="17" data-agirlik="140" data-olcu="440,300,11.5,21,27">HEA 450</option>
+						<option value="18" data-agirlik="155" data-olcu="490,300,12,23,27">HEA 500</option>
+						<option value="19" data-agirlik="166" data-olcu="540,300,12.5,24,27">HEA 550</option>
+						<option value="20" data-agirlik="178" data-olcu="590,300,13,25,27">HEA 600</option>
+						<option value="21" data-agirlik="190" data-olcu="640,300,13.5,26,27">HEA 650</option>
+						<option value="22" data-agirlik="204" data-olcu="690,300,14.5,27,27">HEA 700</option>
+						<option value="23" data-agirlik="224" data-olcu="790,300,15,28,30">HEA 800</option>
+						<option value="24" data-agirlik="252" data-olcu="890,300,16,30,30">HEA 900</option>
+						<option value="25" data-agirlik="272" data-olcu="990,300,16.5,31,30">HEA 1000</option>
+					</select>
+				</div>
+			</div>
+			<div class="secenek">
+				<div class="s1">BOY</div>
+				<div class="s2">
+					<div class="ui right labeled input">
+						<input type="text" id="malzemeBoy" placeholder="" value="1000">
+						<div class="ui dropdown label" id="uzunlukBirim">
+							<div class="text">mm</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<div class="item" data-value="1">mm</div>
+								<div class="item" data-value="2">cm</div>
+								<div class="item" data-value="3">m</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="secenek">
+				<div class="s1">MALZEME</div>
+				<div class="s2">
+					<select class="ui dropdown" name="malzeme" id="malzeme">
+						<option value="1" data-yogunluk="7.86">DEMİR</option>
+						<option value="2" data-yogunluk="8">GALVANİZ</option>
+						<option value="3" data-yogunluk="7.96">PASLANMAZ</option>
+						<option value="4" data-yogunluk="2.75">ALÜMİNYUM</option>
+						<option value="0" data-yogunluk="0">DİĞER</option>
+					</select>
+				</div>
+			</div>
+			<div class="secenek" id="yogunluk">
+				<div class="s1">YOĞUNLUK</div>
+				<div class="s2">
+					<div class="ui right labeled input">
+						<input type="text" class="yogunluk" placeholder="">
+						<div class="ui basic label">
+							g/cm<sup>3</sup>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="secenek">
+				<div class="s1">FİYAT</div>
+				<div class="s2">
+					<div class="ui right labeled input">
+						<input type="text" id="fiyat" placeholder="" value="0,00">
+						<div class="ui dropdown label" id="paraBirim">
+							<div class="text">₺ / kg</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<div class="item" data-value="1">₺ / kg</div>
+								<div class="item" data-value="2">$ / kg</div>
+								<div class="item" data-value="3">€ / kg</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sonuc">
+				<div id="loader" class="hesap_sonuc">
+					<div class="loader">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+				<div class="hesaplananDegerler"></div>
+			</div>
+			<div class="hesapla">
+				<div id="butonHesapla" data-yer="yassiSac" class="ui primary submit button huge" style="margin-right: 20px;">Hesapla</div>
+				<div style="display: inline-block;position: relative;top: -2px;">
+					<div class="ui mini   vertical buttons" style="margin-left: 50px;margin-top: 2px;position: absolute;z-index: 1;">
+						<button class="ui icon button i1" command="Up" style="background: rgba(34, 36, 38, 0);padding: 0;"> <i class="up chevron icon"></i> </button>
+						<button class="ui icon button i2" command="Down" style="background: rgba(34, 36, 38, 0);"> <i class="down chevron icon"></i> </button>
+					</div>
+					<div class="ui action right  labeled input" style="width: 82px">
+						<input type="text" id="adet" name="adet_k" value="1">
+						<div class="ui basic label labelAdet" style="color: #666666; width: 100%"> ADET </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<section>
+		<h1>HEA PROFİL</h1>
+		<p>Hakkında detaylı bilgilere aşağıdan ulaşabilirsiniz</p>
+	</section>	<div id="tab" class="ui pointing secondary menu">
+		<a class="item active" data-tab="ozellik">Özellikler</a>
+		<a class="item " data-tab="tablo">Tablo</a>
+
+	</div>
+	<div class="ui tab active" data-tab="ozellik">
+		<div class="faq">
+			<div class="toggle">
+	<div class="toggle-title">
+		<h2>
+			<i></i>
+			<span class="title-name">I / H Profil</span>
+		</h2>
+	</div>
+	<div class="toggle-inner">
+		<p>
+			İnşaat sektörünün her alanında temel profil ihtiyaçlarını oluşturan I / H profil, sadece inşaatlarda değil, 
+			makine üretimlerinde ve buna benzer, dayanıklı bir temel konstrüksiyon malzemesine ihtiyaç duyulan her yerde kullanılmaktadır. 
+			<br>
+			I / H profiller, ismini şeklinden alır. Yatay bir H harfi ve dikey bir I harfi görünümüne sahip olan bu profiller, 
+			özellikle şekilleri nedeniyle pek çok sektörde oldukça kullanışlı bir malzeme konumunda. I / H profiller içerisinde, 
+			en çok talep göreni HEA profillerdir.
+		</p>
+	</div>
+</div>
+<div class="toggle">
+	<div class="toggle-title ">
+		<h2>
+			<i></i>
+			<span class="title-name">I / H Profil Nedir ?</span>
+		</h2>
+	</div>
+	<div class="toggle-inner">
+		<p>
+			I / H Profil, özellikle ince profile ihtiyaç duyulan alanlarda yaygın olarak kullanılan, farklı boyut alternatifleri 
+			sayesinde her yapıya rahatlıkla uygulanabilen, demir ve benzeri çok sayıda hammaddeden üretilebilen bir yapı malzemesidir. 
+			Toplamda 10 farklı I / H profil türü bulunmaktadır.
+		</p>
+	</div>
+</div>
+<div class="toggle">
+	<div class="toggle-title  ">
+		<h2>
+			<i></i>
+			<span class="title-name">I / H Profil Hangi Alanlarda Kullanılır ?</span>
+		</h2>
+	</div>
+	<div class="toggle-inner">
+		<p>
+			Profiller içerisinde belki de en geniş kullanım alanı I / H profillere ait. Neredeyse her inşaatta kullanılan bu profiller, 
+			çok fazla çeşide sahip olması sayesinde, yapılar dışında, daha hafif profile ihtiyaç duyulan taşıtlarda, mobilyalarda, 
+			hareketli veya hareketsiz aksamlı makinelerde de görülmektedir.
+		</p>
+	</div>
+</div>
+<div class="toggle">
+	<div class="toggle-title  ">
+		<h2>
+			<i></i>
+			<span class="title-name">I / H Profil Türleri</span>
+		</h2>
+	</div>
+	<div class="toggle-inner">
+		<p>
+			Her biri farklı kesitlere sahip, 10 farklı I / H Profil türü bulunmaktadır. Bunlardan en yaygını 
+			<span class="bold-text">HEA profil</span> olarak bilinir. 
+			HEA profil, özellikle inşaatlarda sıklıkla başvurulan bir yapı malzemesi konumundadır. 
+			<br>
+			HEA profil dışında, NPI / IPN, IPE, IPE A, IPE O, HEB, HEM, HL, HD ve HP olmak üzere, toplamda 10 profil türü bulunmaktadır.
+			<br>
+			I / H profillerde, profil türünü belirleyen ön önemli etmek profilin kesitleridir. 
+			En, uzunluk ve yoğunluk faktörlerine bağlı olarak kendi içinde kategorilendirilmiştir.
+		</p>
+	</div>
+</div>
+<div class="toggle">
+	<div class="toggle-title ">
+		<h2>
+			<i></i>
+			<span class="title-name">I / H Profiller Hangi Malzemelerden Üretilir ?</span>
+		</h2>
+	</div>
+	<div class="toggle-inner">
+		<p>
+			Yapının türüne göre, istenen her malzemeden I / H profil üretilmesi mümkündür. Bunlardan yaygın olarak kullanılanları demir 
+			ve paslanmaz çelik olsa da, alüminyum gibi malzemelerden üretilen profiller, daha hafif malzeme ihtiyacı olan alanlarda 
+			sıklıkla tercih edilmektedir.
+			<br>
+			I / H profillerin demir, galvaniz, paslanmaz çelik ve alüminyum temel malzemelerinden üretilmesi mümkündür. 
+			Bunun dışında, üretim yapan firmalar özel isteklere göre üretim yapmaktadır.
+		</p>
+	</div>
+</div>
+<div class="toggle">
+	<div class="toggle-title ">
+		<h2>
+			<i></i>
+			<span class="title-name">I / H Profil Hesaplama ve Hesaplama Formülü</span>
+		</h2>
+	</div>
+	<div class="toggle-inner">
+		<p>
+			Özellikle çok farklı çeşitleri bulunan I / H profil hesaplamasında dikkate alınması gereken çok sayıda nokta mevcut. 
+			Her profil türüne göre değişen hesaplama formülü, 10 farklı I / H profil türü olduğunu göz önünde bulundurunca 
+			çok daha karmaşık bir hal almakta.
+			<br>
+			<span class="bold-text">I / H profil hesaplama</span> işlemi için formülleri el ile uygulamaktan ziyade, sadece boy, ebat, malzeme ve yoğunluk 
+			bilgilerini girerek, sitemizde yer alan hesaplama aracından yararlanmanız mümkün. 
+			Hesaplama aracı sayesinde, tüm hesaplamalarınızı sadece birkaç dakika içerisinde, hızlı ve doğru şekilde tamamlayabilirsiniz.
+		</p>
+	</div>
+</div>		</div>
+	</div>
+	<div class="ui tab " data-tab="tablo">
+		<table>
+			<thead>
+				<tr>
+					<td>KOD</td>
+					<td>G<br>
+						<span>kg/m</span>
+					</td>
+					<td>h<br>
+						<span>mm</span>
+					</td>
+					<td>b<br>
+						<span>mm</span>
+					</td>
+					<td>t<sub>w</sub><br>
+						<span>mm</span>
+					</td>
+					<td>t<sub>f</sub><br>
+						<span>mm</span>
+					</td>
+					<td>r<br>
+						<span>mm</span>
+					</td>
+					<td>A<br>
+						<span>mm<sup>2</sup>x10<sup>2</sup></span>
+					</td>
+					<td>h<sub>i</sub><br>
+						<span>mm</span>
+					</td>
+					<td>d<br>
+						<span>mm</span>
+					</td>
+					<td>Ø</td>
+					<td>p<sub>min</sub><br>
+						<span>mm</span>
+					</td>
+					<td>p<sub>max</sub><br>
+						<span>mm</span>
+					</td>
+					<td>A<sub>L</sub><br>
+						<span>m<sup>2</sup>/m</span>
+					</td>
+					<td>A<sub>G</sub><br>
+						<span>m<sup>2</sup>/t</span>
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>HE 100 M</td>
+					<td>41,8</td>
+					<td>120</td>
+					<td>106</td>
+					<td>12</td>
+					<td>20</td>
+					<td>12</td>
+					<td>53,2</td>
+					<td>80</td>
+					<td>56</td>
+					<td>M 10</td>
+					<td>62</td>
+					<td>64</td>
+					<td>0,619</td>
+					<td>14,82</td>
+				</tr>
+				<tr>
+					<td>HE 120 M</td>
+					<td>52,1</td>
+					<td>140</td>
+					<td>126</td>
+					<td>12,5</td>
+					<td>21</td>
+					<td>12</td>
+					<td>66,4</td>
+					<td>98</td>
+					<td>74</td>
+					<td>M 12</td>
+					<td>66</td>
+					<td>74</td>
+					<td>0,738</td>
+					<td>14,16</td>
+				</tr>
+				<tr>
+					<td>HE 140 M</td>
+					<td>63,2</td>
+					<td>160</td>
+					<td>146</td>
+					<td>13</td>
+					<td>22</td>
+					<td>12</td>
+					<td>80,6</td>
+					<td>116</td>
+					<td>92</td>
+					<td>M 16</td>
+					<td>72</td>
+					<td>82</td>
+					<td>0,857</td>
+					<td>13,56</td>
+				</tr>
+				<tr>
+					<td>HE 160 M</td>
+					<td>76,2</td>
+					<td>180</td>
+					<td>166</td>
+					<td>14</td>
+					<td>23</td>
+					<td>15</td>
+					<td>97,1</td>
+					<td>134</td>
+					<td>104</td>
+					<td>M 20</td>
+					<td>86</td>
+					<td>90</td>
+					<td>0,970</td>
+					<td>12,74</td>
+				</tr>
+				<tr>
+					<td>HE 180 M</td>
+					<td>88,9</td>
+					<td>200</td>
+					<td>186</td>
+					<td>14,5</td>
+					<td>24</td>
+					<td>15</td>
+					<td>113,3</td>
+					<td>152</td>
+					<td>122</td>
+					<td>M 24</td>
+					<td>94</td>
+					<td>98</td>
+					<td>1,089</td>
+					<td>12,25</td>
+				</tr>
+				<tr>
+					<td>HE 200 M</td>
+					<td>103</td>
+					<td>220</td>
+					<td>206</td>
+					<td>15</td>
+					<td>25</td>
+					<td>18</td>
+					<td>131,3</td>
+					<td>170</td>
+					<td>134</td>
+					<td>M 27</td>
+					<td>106</td>
+					<td>106</td>
+					<td>1,203</td>
+					<td>11,67</td>
+				</tr>
+				<tr>
+					<td>HE 220 M</td>
+					<td>117</td>
+					<td>240</td>
+					<td>226</td>
+					<td>15,5</td>
+					<td>26</td>
+					<td>18</td>
+					<td>149,4</td>
+					<td>188</td>
+					<td>152</td>
+					<td>M 27</td>
+					<td>108</td>
+					<td>124</td>
+					<td>1,322</td>
+					<td>11,27</td>
+				</tr>
+				<tr>
+					<td>HE 240 M</td>
+					<td>157</td>
+					<td>270</td>
+					<td>248</td>
+					<td>18</td>
+					<td>32</td>
+					<td>21</td>
+					<td>199,6</td>
+					<td>206</td>
+					<td>164</td>
+					<td>M 27</td>
+					<td>116</td>
+					<td>146</td>
+					<td>1,460</td>
+					<td>9,318</td>
+				</tr>
+				<tr>
+					<td>HE 260 M</td>
+					<td>172</td>
+					<td>290</td>
+					<td>268</td>
+					<td>18</td>
+					<td>32,5</td>
+					<td>24</td>
+					<td>219,6</td>
+					<td>225</td>
+					<td>177</td>
+					<td>M 27</td>
+					<td>122</td>
+					<td>166</td>
+					<td>1,575</td>
+					<td>9,133</td>
+				</tr>
+				<tr>
+					<td>HE 280 M</td>
+					<td>189</td>
+					<td>310</td>
+					<td>288</td>
+					<td>18,5</td>
+					<td>33</td>
+					<td>24</td>
+					<td>240,2</td>
+					<td>244</td>
+					<td>196</td>
+					<td>M 27</td>
+					<td>122</td>
+					<td>186</td>
+					<td>1,694</td>
+					<td>8,984</td>
+				</tr>
+				<tr>
+					<td>HE 300 M</td>
+					<td>238</td>
+					<td>340</td>
+					<td>310</td>
+					<td>21</td>
+					<td>39</td>
+					<td>27</td>
+					<td>303,1</td>
+					<td>262</td>
+					<td>208</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>208</td>
+					<td>1,832</td>
+					<td>7,699</td>
+				</tr>
+				<tr>
+					<td>HE 320 M</td>
+					<td>245</td>
+					<td>359</td>
+					<td>309</td>
+					<td>21</td>
+					<td>40</td>
+					<td>27</td>
+					<td>312,0</td>
+					<td>279</td>
+					<td>225</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>204</td>
+					<td>1,866</td>
+					<td>7,616</td>
+				</tr>
+				<tr>
+					<td>HE 340 M</td>
+					<td>248</td>
+					<td>377</td>
+					<td>309</td>
+					<td>21</td>
+					<td>40</td>
+					<td>27</td>
+					<td>315,8</td>
+					<td>297</td>
+					<td>243</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>204</td>
+					<td>1,902</td>
+					<td>7,670</td>
+				</tr>
+				<tr>
+					<td>HE 360 M</td>
+					<td>250</td>
+					<td>395</td>
+					<td>308</td>
+					<td>21</td>
+					<td>40</td>
+					<td>27</td>
+					<td>318,8</td>
+					<td>315</td>
+					<td>261</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>204</td>
+					<td>1,934</td>
+					<td>7,730</td>
+				</tr>
+				<tr>
+					<td>HE 400 M</td>
+					<td>256</td>
+					<td>432</td>
+					<td>307</td>
+					<td>21</td>
+					<td>40</td>
+					<td>27</td>
+					<td>325,8</td>
+					<td>352</td>
+					<td>298</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>202</td>
+					<td>2,004</td>
+					<td>7,835</td>
+				</tr>
+				<tr>
+					<td>HE 450 M</td>
+					<td>263</td>
+					<td>478</td>
+					<td>307</td>
+					<td>21</td>
+					<td>40</td>
+					<td>27</td>
+					<td>335,4</td>
+					<td>398</td>
+					<td>344</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>202</td>
+					<td>2,096</td>
+					<td>7,959</td>
+				</tr>
+				<tr>
+					<td>HE 500 M</td>
+					<td>270</td>
+					<td>524</td>
+					<td>306</td>
+					<td>21</td>
+					<td>40</td>
+					<td>27</td>
+					<td>344,3</td>
+					<td>444</td>
+					<td>390</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>202</td>
+					<td>2,184</td>
+					<td>8,079</td>
+				</tr>
+				<tr>
+					<td>HE 550 M</td>
+					<td>278</td>
+					<td>572</td>
+					<td>306</td>
+					<td>21</td>
+					<td>40</td>
+					<td>27</td>
+					<td>354,4</td>
+					<td>492</td>
+					<td>438</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>202</td>
+					<td>2,280</td>
+					<td>8,195</td>
+				</tr>
+				<tr>
+					<td>HE 600 M</td>
+					<td>285</td>
+					<td>620</td>
+					<td>305</td>
+					<td>21</td>
+					<td>40</td>
+					<td>27</td>
+					<td>363,7</td>
+					<td>540</td>
+					<td>486</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>200</td>
+					<td>2,372</td>
+					<td>8,308</td>
+				</tr>
+				<tr>
+					<td>HE 650 M</td>
+					<td>293</td>
+					<td>668</td>
+					<td>305</td>
+					<td>21</td>
+					<td>40</td>
+					<td>27</td>
+					<td>373,7</td>
+					<td>588</td>
+					<td>534</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>200</td>
+					<td>2,468</td>
+					<td>8,411</td>
+				</tr>
+				<tr>
+					<td>HE 700 M</td>
+					<td>301</td>
+					<td>716</td>
+					<td>304</td>
+					<td>21</td>
+					<td>40</td>
+					<td>27</td>
+					<td>383,0</td>
+					<td>636</td>
+					<td>582</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>200</td>
+					<td>2,560</td>
+					<td>8,513</td>
+				</tr>
+				<tr>
+					<td>HE 800 B</td>
+					<td>262</td>
+					<td>800</td>
+					<td>300</td>
+					<td>17,5</td>
+					<td>33</td>
+					<td>30</td>
+					<td>334,2</td>
+					<td>734</td>
+					<td>674</td>
+					<td>M 27</td>
+					<td>134</td>
+					<td>198</td>
+					<td>2,713</td>
+					<td>10,34</td>
+				</tr>
+				<tr>
+					<td>HE 900 M</td>
+					<td>333</td>
+					<td>910</td>
+					<td>302</td>
+					<td>21</td>
+					<td>40</td>
+					<td>30</td>
+					<td>423,6</td>
+					<td>830</td>
+					<td>770</td>
+					<td>M 27</td>
+					<td>138</td>
+					<td>198</td>
+					<td>2,934</td>
+					<td>8,824</td>
+				</tr>
+				<tr>
+					<td>HE 1000 M</td>
+					<td>349</td>
+					<td>1008</td>
+					<td>302</td>
+					<td>21</td>
+					<td>40</td>
+					<td>30</td>
+					<td>444,2</td>
+					<td>928</td>
+					<td>868</td>
+					<td>M 27</td>
+					<td>138</td>
+					<td>198</td>
+					<td>3,130</td>
+					<td>8,978</td>
+				</tr>
+				<tr>
+					<td>HE 100 B</td>
+					<td>20,4</td>
+					<td>100</td>
+					<td>100</td>
+					<td>6</td>
+					<td>10</td>
+					<td>12</td>
+					<td>26,0</td>
+					<td>80</td>
+					<td>56</td>
+					<td>M 10</td>
+					<td>56</td>
+					<td>58</td>
+					<td>0,567</td>
+					<td>27,76</td>
+				</tr>
+				<tr>
+					<td>HE 120 B</td>
+					<td>26,7</td>
+					<td>120</td>
+					<td>120</td>
+					<td>6,5</td>
+					<td>11</td>
+					<td>12</td>
+					<td>34,0</td>
+					<td>98</td>
+					<td>74</td>
+					<td>M 12</td>
+					<td>60</td>
+					<td>68</td>
+					<td>0,686</td>
+					<td>25,71</td>
+				</tr>
+				<tr>
+					<td>HE 140 B</td>
+					<td>33,7</td>
+					<td>140</td>
+					<td>140</td>
+					<td>7</td>
+					<td>12</td>
+					<td>12</td>
+					<td>43,0</td>
+					<td>116</td>
+					<td>92</td>
+					<td>M 16</td>
+					<td>66</td>
+					<td>76</td>
+					<td>0,805</td>
+					<td>23,88</td>
+				</tr>
+				<tr>
+					<td>HE 160 B</td>
+					<td>42,6</td>
+					<td>160</td>
+					<td>160</td>
+					<td>8</td>
+					<td>13</td>
+					<td>15</td>
+					<td>54,3</td>
+					<td>134</td>
+					<td>104</td>
+					<td>M 20</td>
+					<td>80</td>
+					<td>84</td>
+					<td>0,918</td>
+					<td>21,56</td>
+				</tr>
+				<tr>
+					<td>HE 180 B</td>
+					<td>51,2</td>
+					<td>180</td>
+					<td>180</td>
+					<td>8,5</td>
+					<td>14</td>
+					<td>15</td>
+					<td>65,3</td>
+					<td>152</td>
+					<td>122</td>
+					<td>M 24</td>
+					<td>88</td>
+					<td>92</td>
+					<td>1,037</td>
+					<td>20,25</td>
+				</tr>
+				<tr>
+					<td>HE 200 B</td>
+					<td>61,3</td>
+					<td>200</td>
+					<td>200</td>
+					<td>9</td>
+					<td>15</td>
+					<td>18</td>
+					<td>78,1</td>
+					<td>170</td>
+					<td>134</td>
+					<td>M 27</td>
+					<td>100</td>
+					<td>100</td>
+					<td>1,151</td>
+					<td>18,78</td>
+				</tr>
+				<tr>
+					<td>HE 220 B</td>
+					<td>71,5</td>
+					<td>220</td>
+					<td>220</td>
+					<td>9,5</td>
+					<td>16</td>
+					<td>18</td>
+					<td>91,0</td>
+					<td>188</td>
+					<td>152</td>
+					<td>M 27</td>
+					<td>100</td>
+					<td>118</td>
+					<td>1,270</td>
+					<td>17,77</td>
+				</tr>
+				<tr>
+					<td>HE 240 B</td>
+					<td>83,2</td>
+					<td>240</td>
+					<td>240</td>
+					<td>10</td>
+					<td>17</td>
+					<td>21</td>
+					<td>106,0</td>
+					<td>206</td>
+					<td>164</td>
+					<td>M 27</td>
+					<td>108</td>
+					<td>138</td>
+					<td>1,384</td>
+					<td>16,63</td>
+				</tr>
+				<tr>
+					<td>HE 260 B</td>
+					<td>93</td>
+					<td>260</td>
+					<td>260</td>
+					<td>10</td>
+					<td>17,5</td>
+					<td>24</td>
+					<td>118,4</td>
+					<td>225</td>
+					<td>177</td>
+					<td>M 27</td>
+					<td>114</td>
+					<td>158</td>
+					<td>1,499</td>
+					<td>16,12</td>
+				</tr>
+				<tr>
+					<td>HE 280 B</td>
+					<td>103</td>
+					<td>280</td>
+					<td>280</td>
+					<td>10,5</td>
+					<td>18</td>
+					<td>24</td>
+					<td>131,4</td>
+					<td>244</td>
+					<td>196</td>
+					<td>M 27</td>
+					<td>114</td>
+					<td>178</td>
+					<td>1,618</td>
+					<td>15,69</td>
+				</tr>
+				<tr>
+					<td>HE 300 B</td>
+					<td>117</td>
+					<td>300</td>
+					<td>300</td>
+					<td>11</td>
+					<td>19</td>
+					<td>27</td>
+					<td>149,1</td>
+					<td>262</td>
+					<td>208</td>
+					<td>M 27</td>
+					<td>120</td>
+					<td>198</td>
+					<td>1,732</td>
+					<td>14,80</td>
+				</tr>
+				<tr>
+					<td>HE 320 B</td>
+					<td>127</td>
+					<td>320</td>
+					<td>300</td>
+					<td>11,5</td>
+					<td>20,5</td>
+					<td>27</td>
+					<td>161,3</td>
+					<td>279</td>
+					<td>225</td>
+					<td>M 27</td>
+					<td>122</td>
+					<td>198</td>
+					<td>1,771</td>
+					<td>13,98</td>
+				</tr>
+				<tr>
+					<td>HE 340 B</td>
+					<td>134</td>
+					<td>340</td>
+					<td>300</td>
+					<td>12</td>
+					<td>21,5</td>
+					<td>27</td>
+					<td>170,9</td>
+					<td>297</td>
+					<td>243</td>
+					<td>M 27</td>
+					<td>122</td>
+					<td>198</td>
+					<td>1,810</td>
+					<td>13,49</td>
+				</tr>
+				<tr>
+					<td>HE 360 B</td>
+					<td>142</td>
+					<td>360</td>
+					<td>300</td>
+					<td>12,5</td>
+					<td>22,5</td>
+					<td>27</td>
+					<td>180,6</td>
+					<td>315</td>
+					<td>261</td>
+					<td>M 27</td>
+					<td>122</td>
+					<td>198</td>
+					<td>1,849</td>
+					<td>13,04</td>
+				</tr>
+				<tr>
+					<td>HE 400 B</td>
+					<td>155</td>
+					<td>400</td>
+					<td>300</td>
+					<td>13,5</td>
+					<td>24</td>
+					<td>27</td>
+					<td>197,8</td>
+					<td>352</td>
+					<td>298</td>
+					<td>M 27</td>
+					<td>124</td>
+					<td>198</td>
+					<td>1,927</td>
+					<td>12,41</td>
+				</tr>
+				<tr>
+					<td>HE 450 B</td>
+					<td>171</td>
+					<td>450</td>
+					<td>300</td>
+					<td>14</td>
+					<td>26</td>
+					<td>27</td>
+					<td>218,0</td>
+					<td>398</td>
+					<td>344</td>
+					<td>M 27</td>
+					<td>124</td>
+					<td>198</td>
+					<td>2,026</td>
+					<td>11,84</td>
+				</tr>
+				<tr>
+					<td>HE 500 B</td>
+					<td>187</td>
+					<td>500</td>
+					<td>300</td>
+					<td>14,5</td>
+					<td>28</td>
+					<td>27</td>
+					<td>238,6</td>
+					<td>444</td>
+					<td>390</td>
+					<td>M 27</td>
+					<td>124</td>
+					<td>198</td>
+					<td>2,125</td>
+					<td>11,34</td>
+				</tr>
+				<tr>
+					<td>HE 550 B</td>
+					<td>199</td>
+					<td>550</td>
+					<td>300</td>
+					<td>15</td>
+					<td>29</td>
+					<td>27</td>
+					<td>254,1</td>
+					<td>492</td>
+					<td>438</td>
+					<td>M 27</td>
+					<td>124</td>
+					<td>198</td>
+					<td>2,224</td>
+					<td>11,15</td>
+				</tr>
+				<tr>
+					<td>HE 600 B</td>
+					<td>212</td>
+					<td>600</td>
+					<td>300</td>
+					<td>15,5</td>
+					<td>30</td>
+					<td>27</td>
+					<td>270,0</td>
+					<td>540</td>
+					<td>486</td>
+					<td>M 27</td>
+					<td>126</td>
+					<td>198</td>
+					<td>2,323</td>
+					<td>10,96</td>
+				</tr>
+				<tr>
+					<td>HE 650 B</td>
+					<td>225</td>
+					<td>650</td>
+					<td>300</td>
+					<td>16</td>
+					<td>31</td>
+					<td>27</td>
+					<td>286,3</td>
+					<td>588</td>
+					<td>534</td>
+					<td>M 27</td>
+					<td>126</td>
+					<td>198</td>
+					<td>2,422</td>
+					<td>10,77</td>
+				</tr>
+				<tr>
+					<td>HE 700 B</td>
+					<td>241</td>
+					<td>700</td>
+					<td>300</td>
+					<td>17</td>
+					<td>32</td>
+					<td>27</td>
+					<td>306,4</td>
+					<td>636</td>
+					<td>582</td>
+					<td>M 27</td>
+					<td>126</td>
+					<td>198</td>
+					<td>2,520</td>
+					<td>10,48</td>
+				</tr>
+				<tr>
+					<td>HE 800 B</td>
+					<td>262</td>
+					<td>800</td>
+					<td>300</td>
+					<td>17,5</td>
+					<td>33</td>
+					<td>30</td>
+					<td>334,2</td>
+					<td>734</td>
+					<td>674</td>
+					<td>M 27</td>
+					<td>134</td>
+					<td>198</td>
+					<td>2,713</td>
+					<td>10,34</td>
+				</tr>
+				<tr>
+					<td>HE 900 B</td>
+					<td>291</td>
+					<td>900</td>
+					<td>300</td>
+					<td>18,5</td>
+					<td>35</td>
+					<td>30</td>
+					<td>371,3</td>
+					<td>830</td>
+					<td>770</td>
+					<td>M 27</td>
+					<td>134</td>
+					<td>198</td>
+					<td>2,911</td>
+					<td>9,99</td>
+				</tr>
+				<tr>
+					<td>HE 1000 B</td>
+					<td>314</td>
+					<td>1000</td>
+					<td>300</td>
+					<td>19</td>
+					<td>36</td>
+					<td>30</td>
+					<td>400,0</td>
+					<td>928</td>
+					<td>868</td>
+					<td>M 27</td>
+					<td>134</td>
+					<td>198</td>
+					<td>3,110</td>
+					<td>9,905</td>
+				</tr>
+				<tr>
+					<td>HE 100 AA</td>
+					<td>12,2</td>
+					<td>91</td>
+					<td>100</td>
+					<td>4,2</td>
+					<td>5,5</td>
+					<td>12</td>
+					<td>15,6</td>
+					<td>80</td>
+					<td>56</td>
+					<td>M 10</td>
+					<td>54</td>
+					<td>58</td>
+					<td>0,553</td>
+					<td>45,17</td>
+				</tr>
+				<tr>
+					<td>HE 100 A</td>
+					<td>16,7</td>
+					<td>96</td>
+					<td>100</td>
+					<td>5</td>
+					<td>8</td>
+					<td>12</td>
+					<td>21,2</td>
+					<td>80</td>
+					<td>56</td>
+					<td>M 10</td>
+					<td>54</td>
+					<td>58</td>
+					<td>0,561</td>
+					<td>33,68</td>
+				</tr>
+				<tr>
+					<td>HE 120 A</td>
+					<td>19,9</td>
+					<td>114</td>
+					<td>120</td>
+					<td>5</td>
+					<td>8</td>
+					<td>12</td>
+					<td>25,3</td>
+					<td>98</td>
+					<td>74</td>
+					<td>M 12</td>
+					<td>58</td>
+					<td>68</td>
+					<td>0,677</td>
+					<td>34,06</td>
+				</tr>
+				<tr>
+					<td>HE 140 A</td>
+					<td>24,7</td>
+					<td>133</td>
+					<td>140</td>
+					<td>5,5</td>
+					<td>8,5</td>
+					<td>12</td>
+					<td>31,4</td>
+					<td>116</td>
+					<td>92</td>
+					<td>M 16</td>
+					<td>64</td>
+					<td>76</td>
+					<td>0,794</td>
+					<td>32,21</td>
+				</tr>
+				<tr>
+					<td>HE 160 A</td>
+					<td>30,4</td>
+					<td>152</td>
+					<td>160</td>
+					<td>6</td>
+					<td>9</td>
+					<td>15</td>
+					<td>38,8</td>
+					<td>134</td>
+					<td>104</td>
+					<td>M 20</td>
+					<td>78</td>
+					<td>84</td>
+					<td>0,906</td>
+					<td>29,78</td>
+				</tr>
+				<tr>
+					<td>HE 180 A</td>
+					<td>35,5</td>
+					<td>171</td>
+					<td>180</td>
+					<td>6</td>
+					<td>9,5</td>
+					<td>15</td>
+					<td>45,3</td>
+					<td>152</td>
+					<td>122</td>
+					<td>M 24</td>
+					<td>86</td>
+					<td>92</td>
+					<td>1,024</td>
+					<td>28,83</td>
+				</tr>
+				<tr>
+					<td>HE 200 A</td>
+					<td>42,3</td>
+					<td>190</td>
+					<td>200</td>
+					<td>6,5</td>
+					<td>10</td>
+					<td>18</td>
+					<td>53,8</td>
+					<td>170</td>
+					<td>134</td>
+					<td>M 27</td>
+					<td>98</td>
+					<td>100</td>
+					<td>1,136</td>
+					<td>26,89</td>
+				</tr>
+				<tr>
+					<td>HE 220 A</td>
+					<td>50,5</td>
+					<td>210</td>
+					<td>220</td>
+					<td>7</td>
+					<td>11</td>
+					<td>18</td>
+					<td>64,3</td>
+					<td>188</td>
+					<td>152</td>
+					<td>M 27</td>
+					<td>98</td>
+					<td>118</td>
+					<td>1,255</td>
+					<td>24,85</td>
+				</tr>
+				<tr>
+					<td>HE 240 A</td>
+					<td>60,3</td>
+					<td>230</td>
+					<td>240</td>
+					<td>7,5</td>
+					<td>12</td>
+					<td>21</td>
+					<td>76,8</td>
+					<td>206</td>
+					<td>164</td>
+					<td>M 27</td>
+					<td>104</td>
+					<td>138</td>
+					<td>1,369</td>
+					<td>22,70</td>
+				</tr>
+				<tr>
+					<td>HE 260 A</td>
+					<td>68,2</td>
+					<td>250</td>
+					<td>260</td>
+					<td>7,5</td>
+					<td>12,5</td>
+					<td>24</td>
+					<td>86,8</td>
+					<td>225</td>
+					<td>177</td>
+					<td>M 27</td>
+					<td>110</td>
+					<td>158</td>
+					<td>1,484</td>
+					<td>21,77</td>
+				</tr>
+				<tr>
+					<td>HE 280 A</td>
+					<td>76,4</td>
+					<td>270</td>
+					<td>280</td>
+					<td>8</td>
+					<td>13</td>
+					<td>24</td>
+					<td>97,3</td>
+					<td>244</td>
+					<td>196</td>
+					<td>M 27</td>
+					<td>112</td>
+					<td>178</td>
+					<td>1,603</td>
+					<td>20,99</td>
+				</tr>
+				<tr>
+					<td>HE 300 A</td>
+					<td>88,3</td>
+					<td>290</td>
+					<td>300</td>
+					<td>8,5</td>
+					<td>14</td>
+					<td>27</td>
+					<td>112,5</td>
+					<td>262</td>
+					<td>208</td>
+					<td>M 27</td>
+					<td>118</td>
+					<td>198</td>
+					<td>1,717</td>
+					<td>19,43</td>
+				</tr>
+				<tr>
+					<td>HE 320 A</td>
+					<td>97,6</td>
+					<td>310</td>
+					<td>300</td>
+					<td>9</td>
+					<td>15,5</td>
+					<td>27</td>
+					<td>124,4</td>
+					<td>279</td>
+					<td>225</td>
+					<td>M 27</td>
+					<td>118</td>
+					<td>198</td>
+					<td>1,756</td>
+					<td>17,98</td>
+				</tr>
+				<tr>
+					<td>HE 340 A</td>
+					<td>105</td>
+					<td>330</td>
+					<td>300</td>
+					<td>9,5</td>
+					<td>16,5</td>
+					<td>27</td>
+					<td>133,5</td>
+					<td>297</td>
+					<td>243</td>
+					<td>M 27</td>
+					<td>118</td>
+					<td>198</td>
+					<td>1,795</td>
+					<td>17,13</td>
+				</tr>
+				<tr>
+					<td>HE 360 A</td>
+					<td>112</td>
+					<td>350</td>
+					<td>300</td>
+					<td>10</td>
+					<td>17,5</td>
+					<td>27</td>
+					<td>142,8</td>
+					<td>315</td>
+					<td>261</td>
+					<td>M 27</td>
+					<td>120</td>
+					<td>198</td>
+					<td>1,834</td>
+					<td>16,36</td>
+				</tr>
+				<tr>
+					<td>HE 400 A</td>
+					<td>125</td>
+					<td>390</td>
+					<td>300</td>
+					<td>11</td>
+					<td>19</td>
+					<td>27</td>
+					<td>159,0</td>
+					<td>352</td>
+					<td>298</td>
+					<td>M 27</td>
+					<td>120</td>
+					<td>198</td>
+					<td>1,912</td>
+					<td>15,32</td>
+				</tr>
+				<tr>
+					<td>HE 450 A</td>
+					<td>140</td>
+					<td>440</td>
+					<td>300</td>
+					<td>11,5</td>
+					<td>21</td>
+					<td>27</td>
+					<td>178,0</td>
+					<td>398</td>
+					<td>344</td>
+					<td>M 27</td>
+					<td>122</td>
+					<td>198</td>
+					<td>2,011</td>
+					<td>14,39</td>
+				</tr>
+				<tr>
+					<td>HE 500 A</td>
+					<td>155</td>
+					<td>490</td>
+					<td>300</td>
+					<td>12</td>
+					<td>23</td>
+					<td>27</td>
+					<td>197,5</td>
+					<td>444</td>
+					<td>390</td>
+					<td>M 27</td>
+					<td>122</td>
+					<td>198</td>
+					<td>2,110</td>
+					<td>13,60</td>
+				</tr>
+				<tr>
+					<td>HE 550 A</td>
+					<td>166</td>
+					<td>540</td>
+					<td>300</td>
+					<td>12,5</td>
+					<td>24</td>
+					<td>27</td>
+					<td>211,8</td>
+					<td>492</td>
+					<td>438</td>
+					<td>M 27</td>
+					<td>122</td>
+					<td>198</td>
+					<td>2,209</td>
+					<td>13,29</td>
+				</tr>
+				<tr>
+					<td>HE 600 A</td>
+					<td>178</td>
+					<td>590</td>
+					<td>300</td>
+					<td>13</td>
+					<td>25</td>
+					<td>27</td>
+					<td>226,5</td>
+					<td>540</td>
+					<td>486</td>
+					<td>M 27</td>
+					<td>122</td>
+					<td>198</td>
+					<td>2,308</td>
+					<td>12,98</td>
+				</tr>
+				<tr>
+					<td>HE 650 A</td>
+					<td>190</td>
+					<td>640</td>
+					<td>300</td>
+					<td>13,5</td>
+					<td>26</td>
+					<td>27</td>
+					<td>241,6</td>
+					<td>588</td>
+					<td>534</td>
+					<td>M 27</td>
+					<td>124</td>
+					<td>198</td>
+					<td>2,407</td>
+					<td>12,69</td>
+				</tr>
+				<tr>
+					<td>HE 700 A</td>
+					<td>204</td>
+					<td>690</td>
+					<td>300</td>
+					<td>14,5</td>
+					<td>27</td>
+					<td>27</td>
+					<td>260,5</td>
+					<td>636</td>
+					<td>582</td>
+					<td>M 27</td>
+					<td>124</td>
+					<td>198</td>
+					<td>2,505</td>
+					<td>12,25</td>
+				</tr>
+				<tr>
+					<td>HE 800 A</td>
+					<td>224</td>
+					<td>790</td>
+					<td>300</td>
+					<td>15</td>
+					<td>28</td>
+					<td>30</td>
+					<td>285,8</td>
+					<td>734</td>
+					<td>674</td>
+					<td>M 27</td>
+					<td>130</td>
+					<td>198</td>
+					<td>2,698</td>
+					<td>12,03</td>
+				</tr>
+				<tr>
+					<td>HE 900 A</td>
+					<td>252</td>
+					<td>890</td>
+					<td>300</td>
+					<td>16</td>
+					<td>30</td>
+					<td>30</td>
+					<td>320,5</td>
+					<td>830</td>
+					<td>770</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>198</td>
+					<td>2,896</td>
+					<td>11,51</td>
+				</tr>
+				<tr>
+					<td>HE 1000 A</td>
+					<td>272</td>
+					<td>990</td>
+					<td>300</td>
+					<td>16,5</td>
+					<td>31</td>
+					<td>30</td>
+					<td>346,8</td>
+					<td>928</td>
+					<td>868</td>
+					<td>M 27</td>
+					<td>132</td>
+					<td>198</td>
+					<td>3,095</td>
+					<td>11,37</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="ui tab" data-tab="dosya">
+		<table class="dosya">
+			<thead>
+				<tr>
+					<td>KOD</td>
+					<td colspan="4">DOSYA UZANTISI</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>IPE 80</td>
+					<td>DXF</td>
+					<td>IGS</td>
+					<td>STEP</td>
+					<td>SOLIDWORK</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<!-- <div class="yorum">
+	<div id="disqus_thread"></div>
+	<script>
+		( function () {
+			var d = document,
+				s = d.createElement( 'script' );
+			s.src = 'https://hea-profil-agirlik-hesaplama.disqus.com/embed.js';
+			s.setAttribute( 'data-timestamp', +new Date() );
+			( d.head || d.body ).appendChild( s );
+		} )();
+	</script>
+</div> -->
+
+<div class="footer">
+
+	<div class="footer_cell_a logom"><a href="https://api.whatsapp.com/send?phone=905327746319&amp;text=Merhaba%2C+G%c3%bcm%c3%bc%c5%9fay%20Metal%20web%20Sitesi%20%c3%9czerinden+%C3%BCzerinden+ileti%C5%9Fime+ge%C3%A7tim."><img src="varliklar/img/logo_sb.png">
+	</div>
+	<div class="footer_cell_a">
+		<div class="footer_baslik">
+			PLAKA SAC
+		</div>
+		<ul>
+			<li><a href="sac-agirlik-fiyat-hesaplama.html" class="aktif">SAC</a>
+			</li>
+			<li><a href="silme-lama-sac-agirlik-fiyat-hesaplama.html">SİLME / LAMA</a>
+			</li>
+			<li><a href="baklava-desenli-sac-agirlik-fiyat-hesaplama.html">BAKLAVA DESENLİ SAC</a>
+			</li>
+			<li><a href="goz-damlasi-desenli-sac-agirlik-fiyat-hesaplama.html">GÖZ DAMLASI DESENLİ SAC</a>
+			</li>
+			<li><a href="ceta-desenli-sac-agirlik-fiyat-hesaplama.html">ÇETA DESENLİ SAC</a>
+			</li>
+			<li><a href="delikli-sac-agirlik-fiyat-hesaplama.html">DELİKLİ SAC</a>
+			</li>
+		</ul>
+		<div class="footer_baslik">
+			L PROFİL
+		</div>
+		<ul>
+
+			<li><a href="L-profil-esit-kenar-kosebent-agirlik-fiyat-hesaplama.html">EŞİT KENAR KÖŞEBENT</a>
+			</li>
+			<li><a href="L-profil-cesit-kenar-kosebent-agirlik-fiyat-hesaplama.html">ÇEŞİT KENAR KÖŞEBENT</a>
+			</li>
+		</ul>
+	</div>
+	<div class="footer_cell_a">
+		<div class="footer_baslik">
+			I / H PROFİL
+		</div>
+		<ul>
+			<li><a href="i-profil-NPI-IPN-agirlik-fiyat-hesaplama.html">NPI / IPN PROFİL</a>
+			</li>
+			<li><a href="i-profil-IPE-agirlik-fiyat-hesaplama.html">IPE PROFİL</a>
+			</li>
+			<li><a href="i-profil-IPE-A-agirlik-fiyat-hesaplama.html">IPE A PROFİL</a>
+			</li>
+			<li><a href="i-profil-IPE-O-agirlik-fiyat-hesaplama.html">IPE O PROFİL</a>
+			</li>
+			<li><a href="H-profil-HEA-agirlik-fiyat-hesaplama.html">HEA PROFİL</a>
+			</li>
+			<li><a href="H-profil-HEB-agirlik-fiyat-hesaplama.html">HEB PROFİL</a>
+			</li>
+			<li><a href="H-profil-HEM-agirlik-fiyat-hesaplama.html">HEM PROFİL</a>
+			</li>
+			<li><a href="H-profil-HL-agirlik-fiyat-hesaplama.html">HL PROFİL</a>
+			</li>
+			<li><a href="H-profil-HD-agirlik-fiyat-hesaplama.html">HD PROFİL</a>
+			</li>
+			<li><a href="H-profil-HP-agirlik-fiyat-hesaplama.html">HP PROFİL</a>
+			</li>
+		</ul>
+	</div>
+	<div class="footer_cell_a">
+
+		<div class="footer_baslik">
+			U PROFİL
+		</div>
+		<ul>
+
+			<li><a href="U-profil-NPU-UPN-agirlik-fiyat-hesaplama.html">NPU / UPN PROFİL</a>
+			</li>
+			<li><a href="U-profil-UPE-agirlik-fiyat-hesaplama.html">UPE PROFİL</a>
+			</li>
+		</ul>
+		<div class="footer_baslik">
+			KUTU PROFİL
+		</div>
+		<ul>
+
+			<li><a href="kutu-profil-kare-agirlik-fiyat-hesaplama.html">KARE KUTU PROFİL</a>
+			</li>
+			<li><a href="kutu-profil-dikdortgen-agirlik-fiyat-hesaplama.html">DİKDÖRTGEN KUTU PROFİL</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="footer_cell_a">
+		<div class="footer_baslik">
+			DİĞER ÇEŞİTLER
+		</div>
+		<ul>
+			<li><a href="T-profil-agirlik-fiyat-hesaplama.html">T PROFİL</a>
+			</li>
+			<li><a href="boru-profil-agirlik-fiyat-hesaplama.html">BORU PROFİL</a>
+			</li>
+			<li><a href="yuvarlak-agirlik-fiyat-hesaplama.html">YUVARLAK</a>
+			</li>
+			<li><a href="altikose-agirlik-fiyat-hesaplama.html">ALTIKÖŞE</</li>
+
+		</ul>
+	</div>
+
+
+</div>
+</div>
+
+<div class="ui basic mini modal yazdirListe">
+	<div class="ui icon header">
+		<i class="print icon"></i> Yazdırma Tercihleri
+	</div>
+	<div class="content">
+		<div class="description">
+			<div class="ui primary  segment" style="width: 318px">
+				<div class="ui form">
+					<div class="inline field">
+						<div class="ui slider checkbox">
+							<input type="checkbox" tabindex="0" class="hidden" id="hiddenAgirlik">
+							<label style="padding-left: 65px !important;width: 300px;">Ağırlık bilgilerini gizle.</label>
+						</div>
+					</div>
+					<div class="inline field">
+						<div class="ui slider checkbox">
+							<input type="checkbox" tabindex="0" class="hidden" id="hiddenFiyat">
+							<label style="padding-left: 65px !important;width: 300px;">Fiyat bilgilerini gizle.</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="actions" style="text-align: center;">
+		<div class="ui red basic cancel inverted button">
+			<i class="remove icon"></i> İptal
+		</div>
+		<div class="ui green ok inverted button yazdirButton">
+			<i class="print icon"></i> Yazdır
+		</div>
+	</div>
+</div>
+<div class="ui basic modal temizleListe">
+	<div class="ui icon header">
+		<i class="trash icon"></i>Temizlemek istediğinize eminmisiniz ?
+	</div>
+	<div class="actions" style="text-align: center;">
+		<div class="ui red basic cancel inverted button">
+			<i class="remove icon"></i> Hayır
+		</div>
+		<div class="ui green ok inverted button">
+			<i class="checkmark icon"></i> Evet
+		</div>
+	</div>
+</div>
+<div class="ui mini modal epostaModal">
+	<div class="header">
+		Geri bildirimizini başarılı bir şekilde kayıt edilmiştir.
+	</div>
+	<div class="content">
+		<div class="description">
+			<div class="ui large form">
+				<div class="field">
+					<input placeholder="E-Posta Adresiniz" type="text">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="actions">
+		<div class="ui deny button">İptal</div>
+		<div class="ui primary right labeled icon button yazdirButton" style="float: left;    margin-left: 7px;">Gönder<i class="print icon"></i>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="varliklar/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="varliklar/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+<script type="text/javascript" src="varliklar/ajax/libs/numeral.js/2.0.6/numeral.min4a414a41.js?ver=4.8.2"></script>
+<script src="varliklar/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="varliklar/js/print.js"></script>
+
+<script type="text/javascript" src="varliklar/js/menu.js"></script>
+<!--<script type='text/javascript' src="genel.js?1578727504"></script>-->
+<script type="text/javascript" src="genel.js"></script>
+
+<script>
+			
+			
+	$( ".HEA" ).dropdown({onChange:function(a){var e=$(this).find(":selected").data("olcu");olcuParcala(e," , ,t<sub>w</sub>=,t<sub>f</sub>=,r<sub>1</sub>=,r<sub>2</sub>="),$("#loader").fadeOut(),$(".sonuc").animate({height:"0"},500),$(".hesaplananDegerler").hide()}});
+		
+
+	$( "#yogunluk" ).hide();
+	$( "#malzeme" ).change( function () {
+		var deger = $( this ).find( ":selected" ).val();
+		if ( deger == 0 ) {
+			$( "#yogunluk" ).fadeIn();
+		} else {
+			$( "#yogunluk" ).fadeOut();
+		}
+		$( "#loader" ).fadeOut();
+		$( ".sonuc" ).animate( {
+			height: "0"
+		}, 500 );
+		$( ".hesaplananDegerler" ).hide();
+	} );
+
+	$( 'input' ).change( function () {
+		$( "#loader" ).fadeOut();
+		$( ".sonuc" ).animate( {
+			height: "0"
+		}, 500 );
+		$( ".hesaplananDegerler" ).hide();
+	} );
+
+
+
+
+	function ciftSelect() {
+		var sayi, kalinlik, agirlik, yer, atama;
+		var html = "";
+		kalinlik = $( ".0" ).find( ':selected' ).data( 'kalinlik' );
+		agirlik = $( ".0" ).find( ':selected' ).data( 'agirlik' );
+		yer = $( '.HEA' );
+		atama = $( ".HEA .menu" );
+		var olcu = $( ".0" ).find( ':selected' ).text();
+		yaziParcala( olcu );
+		setTimeout( function () {
+			$( ".olcu  span:nth-child(3)" ).empty();
+			$( ".olcu  span:nth-child(3)" ).append( $( ".HEA" ).find( '.text' ).text() );
+		}, 300 );
+		if ( typeof ( kalinlik ) !== 'undefined' && kalinlik != null ) {
+			var parcala_kalinlik = kalinlik.split( "," );
+			var parcala_agirlik = agirlik.split( "," );
+			for ( sayi = 0; sayi < parcala_kalinlik.length; sayi++ ) {
+				if ( sayi == 0 ) {
+					html += '<div class="item"  data-value="' + parcala_agirlik[ sayi ] + '">' + parcala_kalinlik[ sayi ] + '</div>';
+					yer.dropdown( 'set value', parcala_agirlik[ sayi ] ).dropdown( 'set text', parcala_kalinlik[ sayi ] );
+				} else {
+					html += '<div class="item"  data-value="' + parcala_agirlik[ sayi ] + '">' + parcala_kalinlik[ sayi ] + '</div>';
+				}
+			}
+			atama.html( html );
+		}
+	}
+
+	function formHesaplama() {
+		var en, boy, kalinlik, yogunluk, birimFiyat, adet, agirlik, fiyat, USD, EUR, birimAgirlik, birim, disCap, etKalinligi, x_adet, y_adet;
+		var htmlz = "";
+		yogunluk = $( "#malzeme" ).find( ':selected' ).data( 'yogunluk' );
+		if ( yogunluk == "0" ) {
+			yogunluk = $( ".yogunluk" ).val().replace( /\,/g, '.' );
+		}
+		birimFiyat = $( "#fiyat" ).val().replace( /,/g, '.' );
+		adet = $( "#adet" ).val();
+		boy = $( "#malzemeBoy" ).val();
+		birimAgirlik = ($( ".HEA" ).find( ":selected" ).data( "agirlik" ) / 7.86);$( "#h_ebat" ).text( $( ".HEA  option:selected" ).text() + " x " + boy + " " + birimNe );agirlik = birimAgirlik * yogunluk * boy / birimBolme;		var nebu = "tip1";
+
+		USD = $( "#usd" ).text().replace( /\,/g, '.' );
+		EUR = $( "#eur" ).text().replace( /\,/g, '.' );
+
+
+		if ( kur == "1" ) {
+			fiyat = agirlik * birimFiyat;
+		}
+		if ( kur == "2" ) {
+			fiyat = agirlik * birimFiyat * USD;
+		}
+		if ( kur == "3" ) {
+			fiyat = agirlik * birimFiyat * EUR;
+		}
+		if ( nebu != "tip6" ) {
+			$( "#h_cinsi" ).text( "PROFİL" );
+		} else {
+			$( "#h_cinsi" ).text( "SAC" );
+		};
+
+		$( "#h_malzeme" ).text( $( "#malzeme option:selected" ).text() );
+		$( "#h_adet" ).text( adet );
+		$( "#h_agirlik" ).text( agirlik );
+		$( "#h_fiyat" ).text( fiyat );
+		if ( adet > 1 ) {
+			htmlz += '<div class="t1">';
+			htmlz += '<div class="k1">';
+			htmlz += '<div class="t2">';
+			htmlz += '<div class="i0">' + numeral( agirlik ).format( '0,0.00' ) + ' x ' + adet + '</div>';
+			htmlz += '<div class="i1">' + numeral( ( agirlik * adet ) ).format( '0,0.00' ) + ' KG</div>';
+			htmlz += '<div class="i2">AĞIRLIK</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '<div class="k1">';
+			htmlz += '<div class="t2 son">';
+			htmlz += '<div class="i0">' + numeral( fiyat ).format( '0,0.00' ) + ' x ' + adet + '</div>';
+			htmlz += '<div class="i1">' + numeral( ( fiyat * adet ) ).format( '0,0.00 $' ) + '</div>';
+			htmlz += '<div class="i2">FİYAT</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			 
+		} else {
+			htmlz += '<div class="t1">';
+			htmlz += '<div class="k1">';
+			htmlz += '<div class="t2">';
+			htmlz += '<div class="i1">' + numeral( agirlik ).format( '0,0.00' ) + ' KG</div>';
+			htmlz += '<div class="i2">AĞIRLIK</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '<div class="k1">';
+			htmlz += '<div class="t2 son">';
+			htmlz += '<div class="i1">' + numeral( fiyat ).format( '0,0.00 $' ) + '</div>';
+			htmlz += '<div class="i2">FİYAT</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			htmlz += '</div>';
+			 
+		}
+		setTimeout( function () {
+			$( '.hesaplananDegerler' ).html( htmlz );
+		}, 1000 );
+	}
+</script>
+</body>
+
+
+<!-- Mirrored from www.gozdamlasisac.com/H-profil-HEA-agirlik-fiyat-hesaplama by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2020 07:25:26 GMT -->
+
+<!-- Mirrored from www.gozdamlasisac.com/H-profil-HEA-agirlik-fiyat-hesaplama.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Feb 2023 09:04:55 GMT -->
+</html>
