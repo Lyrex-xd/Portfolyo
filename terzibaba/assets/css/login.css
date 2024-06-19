@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@400;500;600&display=swap');
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #181A1E, #272b31);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background-color: #252932;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border: 1px solid #5252527a;
+
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: 400;
+    margin-bottom: 5px;
+    color: #cecece;
+
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    background-color: #323d4d;
+    border: 0;
+}
+
+input[type="submit"] {
+    background-color: #f1ff26;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: #4e5768;
+    color: #fff;
+    
+    
+}
+
+.container h2{
+
+        margin: 0;
+        margin-bottom: 25px;
+        color: #f1ff26;
+
+}
+
+.usman_aga {
+    position: fixed;
+    bottom: 0;
+    right: -300px;
+    animation: usmanım_ani 10s;
+}
+
+@keyframes usmanım_ani {
+    0% { 
+        right: -300px;
+    }
+    25% {
+        right: 840px;
+    }
+    50% { 
+        right: 1700px;
+    }
+    100% { 
+        right: -300px;
+    }
+  }

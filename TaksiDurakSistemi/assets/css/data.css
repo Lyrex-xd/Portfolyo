@@ -1,0 +1,9 @@
+:root {
+    /* Renk Kodları */
+
+    --bg-color-01: rgba(255, 204, 51, 0.94);
+    --bg-color-02: #ffc107;
+    --bg-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.25) inset;
+    --navbar-bg-color: rgba(3, 3, 3, 0.25);
+
+}

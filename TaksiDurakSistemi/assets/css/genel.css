@@ -1,0 +1,596 @@
+:root {
+    --bg-color-01: rgba(255, 204, 51, 0.94);
+    --bg-color-02: #ffc107;
+    --bg-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.25) inset;
+    --navbar-bg-color: rgba(3, 3, 3, 0.25);
+
+}
+
+* {
+    font-family: Poppins;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffffff75;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--navbar-bg-color);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(3, 3, 3, 0.70);
+  }
+
+body{
+    background-size: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background: url("./../img/bg.jpeg");
+}
+
+/* Background Resmi Filtresi */
+body::before {
+    top: 0;
+    left: 0;
+    content: '';
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    background-color: #0D0D0C;
+}
+
+/* Header Kısmı */
+header {
+    height: 100px;
+    display: block;
+    flex-shrink: 0;
+    backdrop-filter: blur(25px);
+    background: rgba(3, 3, 3, 0.25);
+}
+
+/* Karşılama Mesajı */
+.welcomeText {
+    width: 300px;
+    color: #fff;
+    flex-shrink: 0;
+    font-size: 30px;
+    margin-top: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Header Orta Başlık */
+.HeaderTitle {
+    color: #FFF;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 56px;
+    padding-top: 20px;
+    font-style: normal;
+}
+
+/* Çıkış Butonu */
+.navbar-right {
+    width: 300px;
+    align-items: end;
+}
+
+/* Çıkış Butonu */
+.exitButton {
+    width: 60px;
+    color: #fff;
+    font-size: 38px;
+    font-weight: 900;
+    text-align: center;
+    border-radius: 100%;
+    background-color: var(--bg-color-02);
+}
+
+.buttons_nav {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    margin: 15px 0;
+}
+
+.btn_navbar {
+    width: 190px;
+    height: 63px;
+    color: #000;
+    margin: 0 5px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #F1C131;
+    border: 1px solid #FFC107;
+}
+
+.navbar_icon svg{
+    width: 42px;
+    height: 42px;
+}
+
+.procces_bg_color {
+    border-radius: 15px;
+    background: var(--bg-color-02);
+    box-shadow: var(--bg-box-shadow);
+}
+
+.MainContent{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    width: min-content;
+}
+
+.bilgiler{
+    width: 750px; height: 270px;
+    margin-top: -20px;
+    border-radius: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.notlar{
+    width: 440px;
+    height: 200px;
+    margin-left: 755px;
+    margin-top: -270px;
+    border-radius: 0.5rem;
+
+}
+.yollanan_arac {
+    width: 750px;
+    height: 250px;
+    margin-top: 90px;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+.arac_isteyen{
+    width: 440px;
+    height: 330px;
+    padding: 10px;
+    margin-left: 755px;
+    margin-top: -330px;
+    border-radius: 0.5rem;
+}
+
+
+
+#metinKutusu {
+    width: 100px;
+    height: 20px;
+    border: 1px solid #ccc;
+    margin-left: 50px;
+    border-radius: 0.5rem;
+}
+
+.serverbilgi{
+    border: 4px solid black;
+    width: 700px;
+    height: 50px;
+    font-size: medium;
+    font-weight: 100;
+    background-color: rgb(75, 74, 74);
+    border-radius: 0.5rem;
+}
+.serverbilgi p{
+    margin-top: 15px;
+   font-size: 20px;
+   color: white;
+    
+    
+}
+.serverbilgi2{
+    border: 2px solid black;
+    width: 700px;
+    background-color: yellow;
+}
+.serverbilgi2 p{
+
+margin-top: 15px;
+}
+.serverbilgi, .serverbilgi2 {
+    display: inline-block;
+}
+
+
+
+.araclar{
+    width: 250px; 
+    height: 540px;
+    margin-left: 1200px;
+    margin-top: -540px;
+    border-radius: 0.5rem;
+    display: block;
+}
+.butonalt{
+    margin-top: 2px;
+    margin-left: 594px;
+    border-radius: 0.5rem;
+}
+.musterilerContentBox{
+    width: 85%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+#metinkutusu2{
+    border-radius: 0.5rem;
+    width: 602px;
+    height: 40px;
+    margin-left: 50px;
+    margin-top: 40px;
+
+}
+#metinkutusu3{
+    border-radius: 0.5rem;
+    height: 40px;
+    width: 300px;
+    margin-left: 50px;
+}
+#metinkutusu4{
+    border-radius: 0.5rem;
+    height: 40px;
+    width: 300px;
+  
+}
+#metinkutusu5{
+    border-radius: 0.5rem;
+    width: 602px;
+    height: 100px;
+    margin-left: 50px;
+    margin-top: 40px;
+    resize: none;
+}
+#metinkutusu6{
+    border-radius: 0.5rem;
+    width: 602px;
+    height: 100px;
+    margin-left: 50px;
+    margin-top: 20px;
+    resize: none;
+    
+}
+button {
+    position: relative;
+    left: 250px;
+}
+
+.musteriler {
+    height: 500px;
+}
+
+.musteriler h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.musterileriSiralamaKutusu {
+    box-sizing: border-box;
+    height: 90%;
+    font-size: 13px;
+    width: 100%;
+    overflow: auto;
+}
+
+.bg-color-buton-1 {
+    background-color: #ff8400 !important;
+}
+
+table thead tr th {
+    background: var(--bg-color-02);
+}
+
+.musterileriSiralamaKutusu table td:nth-child(3), .musterileriSiralamaKutusu table td:nth-child(6) {
+    overflow-x: scroll;
+}
+
+.overflow-x-Table {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.musterileriSiralamaKutusu table td:nth-child(7) form input {
+    background-color: #ff8400;
+    padding: 7px 10px;
+    color: #fff;
+    border-radius: 100%;
+}
+
+.musterileriSiralamaKutusu table td:nth-child(7) form input:hover {
+    color: #f00;
+    background-color: #fec33a;
+}
+
+.musterileriSiralamaKutusu table tr:nth-child(even) {
+    background-color: #e2e6ea50;
+}
+
+.musterileriSiralamaKutusu table {
+    color: #000;
+}
+
+.bildirimKutusu {
+    background-color: var(--bg-color-02);
+    width: auto;
+    height: auto;
+    z-index: 999;
+    border-radius: 20px;
+    position: fixed;
+    padding: 20px 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.bildirimKutusu button {
+    background-color: var(--bg-color-02);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    text-align: center;
+    left: 0;
+}
+
+.exitButton img {width: 50px;}
+
+.backArrow {
+    position: fixed;
+    background-color: var(--bg-color-02);
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    padding-top: 0;
+    font-size: 38px;
+    border-radius: 100%;
+    color: #fff;
+    font-weight: 900;
+}
+
+.backArrow:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
+/*araçlar.html css*/
+.kutu2{
+    display:  flex;
+    width: 1360px;
+    height: 650px;
+    background-color: white;
+    margin-top: 100px;
+    margin-left: 150px;
+}
+.araclarkutu{
+    display: flex;
+    border: 10px solid rgb(32, 127, 187);
+    width: 750px; height: 270px;
+    background-color: rgb(232, 227, 227);
+    margin-top: 354px;
+    border-radius: 0.5rem; 
+    margin-left: 270px;
+}
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+table tr td, table tr th {
+    text-align: center;
+}
+
+th, td {
+    width: 100px; /* Her hücreyi aynı genişlikte yapmak için */
+}
+/*.kutu3 {
+    margin-top: 4px;
+    /* margin-right: -75px; 
+    margin-left: 16px;
+}*/
+.kutu3 {
+    position: relative; /* Pozisyonu belirle */
+    top: 0; /* Yukarıdan mesafe, varsayılan değer */
+    left: 0; /* Soldan mesafe, varsayılan değer */
+}
+
+.kutu2 {
+    position: relative; /* Pozisyonu belirle */
+
+}
+
+.araclarkutu {
+    position: absolute; /* Pozisyonu belirle */
+    top: 1px; /* Yukarıdan mesafe, varsayılan değer */
+    left: 0; /* Soldan mesafe, varsayılan değer */
+}
+#metinkutusu1\.5, #metinkutusu1\.6 {
+    float: right; /* Sağa taşı */
+    margin-top: -196px; /* Yukarı taşı, değeri ayarlayarak istediğiniz yüksekliği elde edebilirsiniz */
+    margin-left: 515px;
+    width: 450px;
+    border-radius: 0.5rem;
+}
+#metinkutusu1\.2{
+    width: 450px;
+    margin-top: 20px;
+    border-radius: 0.5rem;
+    margin-left: 30px;
+}
+#metinkutusu1\.3, #metinkutusu1\.4{
+    border-radius: 0.5rem;
+    margin-left: 30px;  
+}
+
+.btnc{
+  
+    margin-left: 405px;
+    margin-top: -155px;
+}
+
+.btn-war
+
+button.buttonc {
+    /* Arka plan rengi ve diğer stil özelliklerini ayarlayabilirsiniz */
+    background-color: #0070C0; /* Örnek renk */
+    color: #fff; /* Metin rengi */
+    border: 1px solid #005EA8; /* Kenarlık rengi */
+    border-radius: 4px; /* Kenar yuvarlama */
+    padding: 10px 20px; /* Dolgu (padding) ayarı */
+    margin: 10px; /* Düğme ile çevresindeki boşluk ayarı */
+    /* Diğer stil özellikleri */
+    margin-left: 282px;
+}
+/*ÇAĞRILAR.HTML*/
+.kutucagri{
+    width: 1360px;
+    height: 650px;
+    background-color: white;
+    margin-top: 50px;
+    margin-left: 70px;
+    border-radius: 0.5rem;
+}
+
+.suslemeResmi {
+    display: none;
+}
+
+.cagriBodyIcerik {
+    display: flex;
+    height: 100%;
+}
+
+.cagrikutusu{
+    background-color: #d4d4d4;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 1px;
+    width: 80%;
+    border-radius: 0.5rem;
+    margin: 10px;
+    margin-left: 5px;
+    padding: 15px;
+}
+
+.cagriIcerik {
+    width: 20%;
+    background-color: #d4d4d4;
+    margin: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 15px;
+    padding-top: 5px;
+}
+
+.notAciklama {
+    margin-top: 20px;
+    border-radius: 5px;
+    resize: none;
+}
+
+.tarihLabel, .hatirlatmaTarihi {
+    margin-top: 15px;
+}
+
+.notlarBaslik {
+    margin-top: 0;
+}
+
+.notlarTablosu  td{
+    text-align: center;
+}
+
+/*KASA.PHP*/
+.border{
+    width: 1360px;
+    height: 650px;
+    background-color: white;
+    margin-top: 50px;
+    margin-left: 70px;
+    border-radius: 1rem;
+}
+p {
+    margin-top: -125px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 47px;
+    margin-bottom: 1rem;
+}
+
+.giderTablosu {
+    text-align: center;
+}
+
+.projectTables input[type="submit"] {
+    background-color: #ff8400;
+    padding: 5px 8px;
+    border-radius: 100%;
+    border: 1px solid #000;
+}
+
+/* RAPOR.PHP */
+
+.olumluTik {
+    color: #2ecc71;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.olumsuzTik {
+    color: #e74c3c;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+/*ÖZET.PHP*/
+.kutuozet {
+    width: 200px; /* Kutu genişliği */
+    height: 100px; /* Kutu yüksekliği */
+    background-color: #3498db; /* Arkaplan rengi (örnekte mavi) */
+    border: 2px solid #2980b9; /* Kenarlık rengi ve kalınlığı (örnekte mavi tonları) */
+   
+    color: #fff; /* Metin rengi (örnekte beyaz) */
+   
+}
+/*yedekbakım*/
+.buttonali{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.buton {
+    background-color: #212529 !important;
+    color: var(--bg-color-02) !important;
+    border-radius: 5px;
+}
+
+.etkilemsiz-input {
+    background-color: #f0f0f0; /* Etkilemsiz arkaplan rengi */
+    color: #808080; /* Etkilemsiz metin rengi */
+    cursor: not-allowed; /* Etkilemsiz bir imleç gösterme */
+  }

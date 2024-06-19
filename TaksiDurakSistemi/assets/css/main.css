@@ -1,0 +1,42 @@
+@import url("./data.css");
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(3px);
+    height: 100vh;
+    width: 100vw;
+}
+
+.container{
+    width: 90vw;
+    height: 80vh;
+    background-color: var(--bg-color-02);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.form-container {
+    border-right: 1px solid var(--navbar-bg-color);
+}
+
+.form-container form {
+    margin: 20px;
+    text-align: center;
+}
+
+h1 {
+    
+}
+
+.form-container input {
+    width: 70%;
+}
+
+.table-container {
+    
+}

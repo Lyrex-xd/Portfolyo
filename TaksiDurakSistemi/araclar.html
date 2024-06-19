@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araçlar</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"  rel="stylesheet" />
+</head>
+<body style="background-image: url('./assets/img/bg.jpeg');">
+<a href="./" class="backArrow">&#x21e6;</a>
+
+<div class="container">
+    <div class="form-container">
+        <form action="./process/" method="post" id="musteriForm">
+            <h1>Araç Ekle</h1>
+            <input type="hidden" name="aracekle">
+            <input type="text" maxlength="70" name="adiniz_soyadiniz">
+            <input type="tel" maxlength="10" name="tel_1" id="tel_1">
+            <input type="tel" maxlength="10" name="tel_2" id="tel_2">
+            <input type="text" maxlength="11" name="plaka" id="plaka">
+            <input type="text" maxlength="99" name="marka_model" id="marka_model" style="margin-top: -178px;" placeholder="Araç Marka-Modeliniz">
+            <input type="text" >
+        </form>
+    </div>
+    <div class="table-container">
+
+    </div>
+</div>
+    
+<script>
+    function refreshPageWithPostData() {
+        // Formu gönder
+        document.getElementById("musteriForm").submit();
+        
+        // Sayfayı temizle ve yenile
+        history.replaceState({}, document.title, window.location.pathname);
+        location.reload();
+    }
+</script>
+    
+</body>
+</html>
